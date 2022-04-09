@@ -1,0 +1,1 @@
+const BASE_URL = "https://aic-server.herokuapp.com/"
