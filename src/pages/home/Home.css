@@ -1,4 +1,4 @@
-.sec1 {
+.sec {
     width:100vw;
     height:100vh;
     display:flex;
@@ -6,25 +6,39 @@
     margin:0;
     overflow-x: hidden;
 }
+
+.sec2 {
+    width:100vw;
+    display:flex;
+    flex-direction:column;
+    margin:0;
+    overflow-x: hidden;
+    padding: 15vh 0;
+}
+
+
 .imageBg {
     flex: 1;
-    background: rgb(255, 183, 183);
     display: flex;
-    flex-direction: row;
     background-repeat: no-repeat;
     background-position: 'center';
     background-size: 'cover';
     height:'100%';
     width:'100%';
-    justify-content: flex-start;
+    justify-content: stretch;
     align-items:center;
+    flex-direction:row;
     
 }
 
 .overlay {
-    justify-content: center;
-    align-items: stretch;
-    background-color:rgba(0, 0, 0, 0.288);
+    display:flex;
+    flex-direction:row;
+    height:100%;
+    align-items: center;
+    background-color:rgba(0, 0, 0, 0.164);
+    justify-content: flex-start;
+    
 }
 
 .titlePara {
@@ -38,17 +52,126 @@
     padding: 1%;
 }
 
-@media only screen and (max-width: 400px) {
-    .imageBg {
-        flex-direction:row;
+.joinUsBtn {
+    outline: none;
+    background-color: rgb(32, 66, 255);
+    font-size: 1.5vw;
+    border-radius: 6px;
+    padding: 12px;
+    color: white;
+    font-weight: 2px;
+    border: 1px solid black;
+}
+
+.joinUsBtn:focus{
+    border: 1px solid white;
+    background-color:rgb(0, 27, 179)
+}
+
+.blockA{
+    flex:1;
+    display:flex;
+    flex-direction: row;
+
+}
+
+.imageBg2 {
+    background-repeat: no-repeat;
+    background-color: rgb(22, 0, 83);
+    border: 1px solid;
+    height:100%; 
+    flex:1;
+    border-radius: 0% 10% 10% 0%;
+    position: relative;
+    overflow: hidden;
+}
+
+.typeBtn {
+    border: none;
+    background-color: inherit;
+    padding:0 2vw;
+    color:#505050;
+
+}
+
+.typeBtn:hover{
+    color:black;
+    cursor: pointer;
+
+}
+
+.typeBtnFocus{
+    color:#358bfc;
+}
+
+.blockAB {
+    text-align: left;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+@keyframes aiRobotHover {
+    0%   {
+        top:0px;
+        left:0px;
+    }
+    50% {
+        top:10px;
+        left:10px;
+    }
+    100% {
+        top:0px;
+        left:0px;
+    }
+
+  }
+
+.aiRobot{
+    position: relative;
+    animation-name: aiRobotHover;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+
+
+
+@media only screen and (orientation: portrait) {
+    
+    .overlay {
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        padding: 0;
     }
     .titlePara {
-        flex:0.7;
         margin-left:0;
-        font-size:80%;
-        padding: 1%;
+        font-size:4vw;
+        padding: 5%;
         text-align: center;
 
     }
+    .joinUsBtn {
+        font-size: 4vw;;
+    }
+    .sec2{
+        font-size: 80%;
+
+    }
+    .blockA {
+        flex-direction: column;
+        
+    }
+    .imageBg2{
+        border-radius: 0;
+
+    }
+    .aiRobot{
+        height: 50vw;
+        width: 50vw;
+    }
+    .blockAB{
+        text-align: center;
+        font-size: 90%;
+    }
+
 }
