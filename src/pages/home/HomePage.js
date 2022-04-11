@@ -2,12 +2,37 @@ import React, { useState } from 'react'
 import './Home.css';
 import image from '../../images/home1.jpg';
 import image2 from '../../images/robotshape-1.png';
+import ourProjects1 from '../../images/ourProjects1.jpg'
+import ourProjects2 from '../../images/ourProjects2.jpg'
+import ourProjects3 from '../../images/ourProjects3.jpg'
+import ourProjects4 from '../../images/ourProjects4.jpg'
+
 import { FONT_COLOR } from '../../constants/color_constants';
 import { HOME_PAGE } from '../../constants/string_constants';
 
 export default function HomePage() {
   const [buttonIndex, setButtonIndex] = useState(0);
   const secTwo = HOME_PAGE.secTwo;
+  const ourProjectList = [
+    {image: ourProjects1, title:'Cow Detector App'},
+    {image: ourProjects2, title:'Chat Bot'},
+    {image: ourProjects3, title: 'Object Detector'},
+    {image: ourProjects4, title: 'Text Detection'},
+  ]
+  const renderProjectList = (projects) => {
+    return projects.map((obj,index)=>{
+      return(
+        <div key={index} className={'projectDiv'} style={{backgroundImage:`url(${obj.image})`, backgroundSize:'cover'}}>
+           <div className={'projectOverlay'}>
+            <h1>{obj.title.toUpperCase()}</h1>
+           </div>  
+        </div>
+      )
+    })
+  }
+
+
+
   return (
     <div>
         <section className={'sec'}>
@@ -37,11 +62,21 @@ export default function HomePage() {
                   <button className= {'typeBtn'} onClick={()=>setButtonIndex(2)}><h3 style={buttonIndex==2?{color:'#358bfc'}:{color:FONT_COLOR}}>Our Vision</h3></button>
                 </div>
                 <h1 style={{color:FONT_COLOR}}>{secTwo[buttonIndex].title}</h1>
-                <h3 style={{color:FONT_COLOR}}>{secTwo[buttonIndex].para}</h3>
+                <p style={{color:FONT_COLOR}}>{secTwo[buttonIndex].para}</p>
               </div>
             </div>
           </div>
         </section>
-    </div>
+        <section className={'sec3'}>
+          <div className={'sec_div'} style={{color:FONT_COLOR}}>
+              <h1>Our Projects</h1>
+              <h3>We Work On Ambitious Projects To Create Solutions And Enhance The Standards Of Living Through Technology</h3>
+              
+          </div>
+          <div className={'projList'}>
+            {renderProjectList(ourProjectList)}
+          </div>
+        </section>
+      </div>
   )
 }
