@@ -24,6 +24,8 @@
   align-items: center;
   justify-content: center;
   padding: 0;
+  position: relative;
+    width: 100%;
 }
 
 .sec_div {
@@ -176,8 +178,8 @@
 
 .bgImgSec4 {
   position: absolute;
-  width: 100%;
-  height: 105%;
+  width:100%;
+  height:100%;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
