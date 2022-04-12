@@ -292,7 +292,14 @@
     align-items: center;
     padding: 0 3%;
   }
+  .sec4{
+    height:100vh;
+  }
   .image_slider {
     width: 100%;
+  }
+  .bgImgSec4 {
+    transform: rotate(90deg);
+    width: 100vh;
   }
 }
