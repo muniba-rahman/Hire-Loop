@@ -113,10 +113,10 @@ export default function HomePage() {
             <div className={"titlePara"}>
               <p>
                 <h1>Advancing AI In Pakistan</h1>
-                <h3>
+                <h2>
                   We Are Leading The AI Revolution In Pakistan, Educating The
                   The Next Generation Of Pakistani AI Researchers And Innovators
-                </h3>
+                </h2>
                 <button className={"joinUsBtn"}>Join Us</button>
               </p>
             </div>
@@ -280,8 +280,8 @@ export default function HomePage() {
                     <img src={blog1}/>
                     <div style={{textAlign:'left'}} >
                       <h2 className="blogTitle">AI and Psychiatry</h2>
-                      <p className="blogDate">{new Date(blogList[0].date).toLocaleDateString("en-US",dateOptions)}</p>
-                      <p className="blogPreview">{blogList[0].preview}</p>
+                      <p className="blogDate">{new Date(blogList[i].date).toLocaleDateString("en-US",dateOptions)}</p>
+                      <p className="blogPreview">{blogList[i].preview}</p>
                     </div>
                   </div>
                   })

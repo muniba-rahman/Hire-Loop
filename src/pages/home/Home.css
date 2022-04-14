@@ -76,7 +76,7 @@
   flex-direction: row;
   height: 100%;
   align-items: center;
-  background-color: rgba(154, 92, 255, 0.2);
+  background-color: rgba(240, 240, 240, 0.2);
   justify-content: flex-start;
 }
 
@@ -274,7 +274,10 @@
   flex:1;
   position: relative;
   width:80%;
+  
 }
+
+
 
 .blog > *{
   width: 80%;
@@ -485,6 +488,12 @@
   .sec6 h2, .sec6 p {
     font-size: small;
     margin: 4px;
+  }
+
+  .blog div {
+    padding-top: 10px;
+    overflow-y: auto;
+    height: 30vh;
   }
 
 }
