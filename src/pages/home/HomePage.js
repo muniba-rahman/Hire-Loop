@@ -173,7 +173,7 @@ export default function HomePage() {
               <h1 style={{ color: FONT_COLOR_DEFAULT }}>
                 {secTwo[buttonIndex].title}
               </h1>
-              <p style={{ color: FONT_COLOR_DEFAULT, fontSize: '16px' }}>
+              <p style={{ color: FONT_COLOR_DEFAULT}}>
                 {secTwo[buttonIndex].para}
               </p>
             </div>
