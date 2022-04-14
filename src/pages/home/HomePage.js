@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Home.css";
-import image from "../../images/home1.jpg";
+import image from "../../images/imgBg.jpg";
 import image2 from "../../images/robotshape-1.png";
 import image3 from "../../images/white-bg.jpg";
 import image4 from "../../images/HowAIWorks.png";
@@ -110,6 +110,7 @@ export default function HomePage() {
           }}
         >
           <div className={"overlay"}>
+            
             <div className={"titlePara"}>
                 <h1>Advancing AI In Pakistan</h1>
                 <h2>

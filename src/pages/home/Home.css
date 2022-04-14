@@ -71,6 +71,7 @@
   justify-content: stretch;
   align-items: center;
   flex-direction: row;
+  background-color: black;
 }
 
 .overlay {
@@ -78,8 +79,16 @@
   flex-direction: row;
   height: 100%;
   align-items: center;
-  background-color: rgba(240, 240, 240, 0.2);
+  background: linear-gradient(45deg,#f17c5841, #fa00604f, #7016ff41 , #06ffc53d,#ebd1423b, #ff380657);
+  background-size: 600% 100%;
+  animation: gradient 16s linear infinite;
+  animation-direction: alternate;
   justify-content: flex-start;
+}
+
+@keyframes gradient {
+  0% {background-position: 0%}
+  100% {background-position: 100%}
 }
 
 .titlePara {
@@ -497,10 +506,14 @@
     margin: 4px;
   }
 
+  .blog img {
+    border-radius: 10px;
+  }
+
   .blog div {
     padding-top: 10px;
     overflow-y: auto;
-    height: 30vh;
+    height: 20vh;
   }
 
 }
