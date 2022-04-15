@@ -218,6 +218,7 @@ export default function HomePage() {
             showStatus={false}
             centerMode={true}
             centerSlidePercentage={100}
+            infiniteLoop={true}
           >
             {ourTeams.map((obj, index) => {
               return (
