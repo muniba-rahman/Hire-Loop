@@ -36,8 +36,16 @@
   color: white;
 }
 
-.sec1 h1 {
-  font-size:36px;
+ h1 {
+  font-size:3vw;
+}
+
+ h2 {
+  font-size: 2vw;
+}
+
+h3 {
+  font-size: 1.5vw;
 }
 
 
@@ -53,7 +61,11 @@
 }
 
 .sec_div h1 {
-  font-size: 3.5vw;
+  font-size: 3vw;
+}
+
+.h2 {
+  font-size: 2vw;
 }
 
 .navSpace {
@@ -166,7 +178,6 @@
 }
 
 .projectDiv {
-  font-size: 150%;
   color: rgba(255, 255, 255, 0);
   height: 60vh;
   width: 50vw;
@@ -178,6 +189,8 @@
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+  transition: 0.5s;
+
 }
 
 .projectDiv:hover {
@@ -253,6 +266,7 @@
   align-items: center;
   justify-content: center;
   flex:1;
+  padding-bottom: 10%;
 }
 
 .bgImgSec6 {
@@ -273,7 +287,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  width: 80%;
+  width: 100%;
+  padding: 0 10% ;
+  overflow-x: auto;
+
 }
 
 .blog {
@@ -283,15 +300,41 @@
   justify-content:flex-start;
   flex:1;
   position: relative;
-  width:80%;
-  
+  border: 1px solid rgb(145, 145, 145);
+  background-color: rgba(129, 129, 129, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
+.blog:hover{
+  background-color: rgba(129, 129, 129, 0.3);
+}
 
 
 .blog > *{
-  width: 80%;
+  width: 90%;
+  font-size: small;
+  border-radius: 10px;
 }
+
+.blog-1 {
+  margin: 0px 20px;
+
+}
+
+.blog div {
+  height: 200px;
+  overflow-y: auto;
+  align-self: center;
+  margin: 10px;
+  padding: 5px;
+  
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+
 
 .carouselHome .carousel.carousel-slider .control-arrow {
   background-color: white;
@@ -302,6 +345,10 @@
   top: 50%;
   bottom: 50%;
   margin: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 .carouselHome .carousel .control-prev.control-arrow:before {
@@ -344,23 +391,23 @@
   animation-iteration-count: infinite;
 }
 
-@media only screen and (orientation: portrait), (max-aspect-ratio: 1.1 ) {
+@media only screen and (orientation: portrait), (max-width: 500px ) {
 
   h1 {
-    font-size:22px !important;
+    font-size:26px !important;
     margin-bottom: 0px;
   }
 
   h2 {
-    font-size: 16px !important;
+    font-size: 18px !important;
   }
 
   h3 {
-    font-size: 14px !important;
+    font-size: 16px !important;
   }
 
   p {
-    font-size: 12px !important;
+    font-size: 14px !important;
   }
 
   .overlay {
@@ -389,6 +436,8 @@
   }
   .imageBg2 {
     border-radius: 50% 50% 0 0;
+    margin-bottom: 10px;
+
   }
   .aiRobot {
     height: 50vw;

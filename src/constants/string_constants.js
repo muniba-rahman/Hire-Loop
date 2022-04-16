@@ -15,5 +15,15 @@ export const HOME_PAGE = {
             title: "Preparing the future generations of Pakistan for the eminent AI REVOLUTION",
             para: "At AI club we ideate a harmonious and opulent world made possible with the use of AI technologies. Artificial intelligence will revolutionize every industry as we know it. AI club imagines a future where innovations in AI technologies will enhance the well being and state of life in Pakistan. The road to embracing artificial intelligence is long, but to achieve greatness one has to walk alone. AI club has laid the foundation of what will be a society of like-minded innovators, students, teachers and leaders.\nWe envision the AI club to represent a culture and a set of values, a culture of innovation and collaboration to enable our members to reach their fullest potential in life."
         }
-    ]
+    ],
+
+    footer: {
+        logoSubtext: "AI Club's objective is to promote Artificial Intelligence education and fund startups created by it’s members.",
+        contactInfo: {
+            address: 'Main University Rd, NED University Of Engineering & Technology, Karachi, Karachi City, Sindh 75270, Pakistan',
+            phone: '+(92) 03353938404',
+            email: 'info.aiclub@gmail.com'
+        }
+    }
 }
+

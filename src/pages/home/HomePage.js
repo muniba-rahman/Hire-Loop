@@ -112,7 +112,7 @@ export default function HomePage() {
           <div className={"overlay"}>
             
             <div className={"titlePara"}>
-                <h1>Advancing AI In Pakistan</h1>
+                <h1>Advancing AI In Pakistan</h1><br/>
                 <h2>
                   We Are Leading The AI Revolution In Pakistan, Educating The
                   The Next Generation Of Pakistani AI Researchers And Innovators
@@ -276,7 +276,7 @@ export default function HomePage() {
             <div className="blogsList"> 
                 {
                   blogList.map((obj, i)=>{
-                    return  <div key={i} className="blog">
+                    return  <div key={i} className={`blog blog-${i}`}>
                     <img src={blog1}/>
                     <div style={{textAlign:'left'}} >
                       <h2 className="blogTitle">AI and Psychiatry</h2>

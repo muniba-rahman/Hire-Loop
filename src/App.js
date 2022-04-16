@@ -1,5 +1,6 @@
 import { Link, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import AboutPage from "./pages/about/AboutPage";
 import ContactPage from "./pages/contact/ContactPage";
@@ -16,6 +17,7 @@ function App() {
         <Route exact path='/about' element={< AboutPage />}></Route>
         <Route exact path='/contact_us' element={< ContactPage />}></Route>
       </Routes>
+      <Footer/>
       </div>
     
 
