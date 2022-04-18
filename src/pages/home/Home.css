@@ -36,19 +36,17 @@
   color: white;
 }
 
- h1 {
-  font-size:3vw;
+h1 {
+  font-size: 3vw;
 }
 
- h2 {
+h2 {
   font-size: 2vw;
 }
 
 h3 {
   font-size: 1.5vw;
 }
-
-
 
 .sec_div {
   display: flex;
@@ -69,7 +67,7 @@ h3 {
 }
 
 .navSpace {
-  height:12vh;
+  height: 12vh;
 }
 
 .imageBg {
@@ -91,23 +89,35 @@ h3 {
   flex-direction: row;
   height: 100%;
   align-items: center;
-  background: linear-gradient(45deg,#f17c5841, #fa00604f, #7016ff41 , #06ffc53d,#ebd1423b, #ff380657);
+  background: linear-gradient(
+    45deg,
+    #f17c5841,
+    #fa00604f,
+    #7016ff41,
+    #06ffc53d,
+    #ebd1423b,
+    #ff380657
+  );
   background-size: 600% 100%;
-  animation: gradient 16s linear infinite;
+  animation: gradient 8s linear infinite;
   animation-direction: alternate;
   justify-content: flex-start;
 }
 
 @keyframes gradient {
-  0% {background-position: 0%}
-  100% {background-position: 100%}
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
 }
 
 .titlePara {
   color: white;
   text-align: left;
   border-radius: 10px;
- 
+
   flex: 0.5;
   margin-left: 2vw;
   padding: 1%;
@@ -190,7 +200,6 @@ h3 {
   background-position: center;
   cursor: pointer;
   transition: 0.5s;
-
 }
 
 .projectDiv:hover {
@@ -216,8 +225,8 @@ h3 {
 
 .bgImgSec4 {
   position: absolute;
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -241,16 +250,16 @@ h3 {
   align-items: flex-end;
   justify-content: flex-end;
   height: 100%;
-  flex:1;
+  flex: 1;
 }
 
 .sec5_text {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   height: 100%;
-  flex:1;
+  flex: 1;
 }
 
 .sec5_img {
@@ -262,17 +271,17 @@ h3 {
 }
 
 .sec6 {
-  position:relative;
+  position: relative;
   align-items: center;
   justify-content: center;
-  flex:1;
+  flex: 1;
   padding-bottom: 10%;
 }
 
 .bgImgSec6 {
   position: absolute;
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -282,23 +291,22 @@ h3 {
 }
 
 .blogsList {
-  position:relative;
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  padding: 0 10% ;
+  padding: 0 10%;
   overflow-x: auto;
-
 }
 
 .blog {
   display: flex;
   flex-direction: column;
-  align-items:center;
-  justify-content:flex-start;
-  flex:1;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
   position: relative;
   border: 1px solid rgb(145, 145, 145);
   background-color: rgba(129, 129, 129, 0.1);
@@ -308,12 +316,11 @@ h3 {
   transition: 0.3s;
 }
 
-.blog:hover{
+.blog:hover {
   background-color: rgba(129, 129, 129, 0.3);
 }
 
-
-.blog > *{
+.blog > * {
   width: 98%;
   font-size: small;
   border-radius: 10px;
@@ -321,7 +328,6 @@ h3 {
 
 .blog-1 {
   margin: 0px 20px;
-
 }
 
 .blog div {
@@ -330,11 +336,9 @@ h3 {
   align-self: center;
   margin: 10px;
   padding: 5px;
-  
+
   background-color: rgba(255, 255, 255, 0.6);
 }
-
-
 
 .carouselHome .carousel.carousel-slider .control-arrow {
   background-color: white;
@@ -348,7 +352,6 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 .carouselHome .carousel .control-prev.control-arrow:before {
@@ -383,7 +386,6 @@ h3 {
   }
 }
 
-
 .aiRobot {
   position: relative;
   animation-name: hoverAnimation;
@@ -391,10 +393,9 @@ h3 {
   animation-iteration-count: infinite;
 }
 
-@media only screen and (orientation: portrait), (max-width: 500px ) {
-
+@media only screen and (orientation: portrait), (max-width: 500px) {
   h1 {
-    font-size:26px !important;
+    font-size: 26px !important;
     margin-bottom: 0px;
   }
 
@@ -417,7 +418,6 @@ h3 {
     padding: 0;
   }
   .titlePara {
-
     margin-left: 0;
     padding: 5%;
     text-align: center;
@@ -426,9 +426,8 @@ h3 {
     font-size: 18px;
   }
 
-
   .navSpace {
-    height:10vw;
+    height: 10vw;
   }
 
   .blockA {
@@ -437,7 +436,6 @@ h3 {
   .imageBg2 {
     border-radius: 50% 50% 0 0;
     margin-bottom: 10px;
-
   }
   .aiRobot {
     height: 50vw;
@@ -471,8 +469,8 @@ h3 {
     align-items: center;
     padding: 0 3%;
   }
-  .sec4{
-    height:100vh;
+  .sec4 {
+    height: 100vh;
   }
   .image_slider {
     width: 100%;
@@ -487,10 +485,9 @@ h3 {
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-
   }
   .imageContainer {
-    flex:0.5;
+    flex: 0.5;
     position: relative;
   }
   .sec5_img {
@@ -514,35 +511,35 @@ h3 {
     position: relative;
     align-items: center;
     line-height: normal;
+    overflow-x: hidden;
   }
   .blogsList {
     position: relative;
-    height:100%;
+    height: 100%;
     flex-direction: column;
     justify-content: flex-start;
-    flex:1;
-
+    flex: 1;
+    padding: 0 5%;
   }
-  .blog{
+  .blog {
     flex-direction: column;
     align-items: stretch;
-    width: 90%;
-    flex:1;
-    margin-bottom: 10px;
-    margin-top:10px;
+    width: 100%;
+    flex: 1;
+    margin-top: 10px;
     border: 1px solid rgb(206, 206, 206);
     border-radius: 20px;
     background-color: rgba(129, 129, 129, 0.1);
-    padding:5%;
+    padding: 3%;
   }
 
-  .blog > *{
+  .blog > * {
     position: relative;
-    display:flex;
+    display: flex;
     flex-direction: column;
-    align-items:stretch;
-    width:100%;
-    height:100%;
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
   }
 
   .sec6 img {
@@ -550,7 +547,8 @@ h3 {
     align-self: stretch;
   }
 
-  .sec6 h2, .sec6 p {
+  .sec6 h2,
+  .sec6 p {
     font-size: small;
     margin: 4px;
   }
@@ -564,5 +562,4 @@ h3 {
     overflow-y: auto;
     height: 20vh;
   }
-
 }

@@ -1,0 +1,44 @@
+.overlay_open {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.drawer_container_open {
+  width: 0;
+  overflow-x: hidden;
+}
+
+@media only screen and (orientation: portrait), (max-width: 500px) {
+  .overlay_closed {
+    width: 0;
+    height: 0;
+  }
+  .overlay_open {
+    position: fixed;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .drawer_container_close {
+    overflow-x: hidden;
+    position: absolute;
+    width: 0;
+    height: 100vh;
+    background-color: white;
+    z-index: 1000;
+    transition: width 0.5s;
+  }
+
+  .drawer_container_open {
+    overflow-x: hidden;
+    position: absolute;
+    width: 70vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 2000;
+    transition: width 0.5s;
+  }
+}
