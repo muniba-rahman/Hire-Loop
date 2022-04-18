@@ -4,11 +4,6 @@
   overflow: hidden;
 }
 
-.drawer_container_open {
-  width: 0;
-  overflow-x: hidden;
-}
-
 @media only screen and (orientation: portrait), (max-width: 500px) {
   .overlay_closed {
     width: 0;
@@ -24,17 +19,17 @@
 
   .drawer_container_close {
     overflow-x: hidden;
-    position: absolute;
-    width: 0;
+    position: fixed;
+    width: 0vw;
     height: 100vh;
     background-color: white;
-    z-index: 1000;
+    z-index: 2000;
     transition: width 0.5s;
   }
 
   .drawer_container_open {
     overflow-x: hidden;
-    position: absolute;
+    position: fixed;
     width: 70vw;
     height: 100vh;
     background-color: white;

@@ -130,7 +130,6 @@ const Navbar = () => {
       </form>
       <button
         className={"drawerBtn"}
-        // drawerBtn
         style={{ backgroundColor: navFontColor }}
         onClick={() => {
           dispatch(drawerToggle());
