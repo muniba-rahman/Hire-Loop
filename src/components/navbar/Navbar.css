@@ -3,12 +3,15 @@ nav {
     flex-direction:row;
     align-items:stretch;
     justify-content:flex-start;
-    position:relative;
-    
+    position:fixed;
+    width:100vw;
+    z-index: 200;    
+    transition: 0.5s;
+    border-bottom: 1px solid rgb(121, 121, 121);
+    padding-right: 20px;
 }
 
 nav > * {
-    /* border:1px solid black; */
     flex-direction:row;
 
 }
@@ -19,17 +22,18 @@ nav > * {
     /* border:1px solid black; */
     color: #44699d;
     margin-left:10px;
-    padding: 6px 2px;
+    padding: 6px 4px;
 }
 
 .logo_container h2 {
-    font-size: 3vw;
+    font-size: 2.5vw;
+    font-weight: bold;
 
 }
 
 .logo_container img {
     object-fit: contain;
-    height: 5vw;
+    height: 4vw;
 }
 
 .list_container {
@@ -40,6 +44,7 @@ nav > * {
     justify-content:flex-end;
     list-style: none;
     align-items: stretch;
+    margin-right: 1%;
 }
 
 .list_container li {
@@ -51,15 +56,15 @@ nav > * {
 
 }
 
-.list_container li:hover > * {
-    color: white;
+.list_container li:hover > *:not(.dropdown_container *) {
+    color: white !important;
     background-color: #44699d;
 }
 
-.list_container li > * {
+.list_container li > *:not(.dropdown_container *) {
     color: #44699d;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
     display: flex;
     align-items: center;
     padding: 0 1vw;
@@ -71,6 +76,7 @@ nav > * {
     flex-direction: row;
     align-items: center;
     justify-content:flex-end;
+
 }
 
 .search_form input {
@@ -95,10 +101,73 @@ nav > * {
     width: 3vw;
     height: 3vw;
     border-radius:50%;
-    margin-right:10px;
 }
 
 .search_form button:hover {
-    background-color:#44699d;
-    color: white;
+    background-color:#44699d !important;
+    color: white !important;
 } 
+
+.list_container li > *:hover + .dropdown_container {
+    transform: scaleY(1);
+    transition: transform 0.8s;
+
+}
+
+.dropdown_container:hover {
+    transform: scaleY(1); 
+}
+
+.dropdown_container li:hover {
+    background-color: #44699d !important;
+}
+
+.dropdown_container {
+    position:absolute;
+    display: flex;
+    flex-direction:column;
+    align-items:stretch;
+    justify-content: center;
+    z-index: 500;
+    width:12vw;
+    padding:0 !important;
+    top:100%;
+    overflow: hidden;
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: transform 0s;
+}
+
+.dropdown_container li {
+    padding: 2vh 0vh;
+    width: 100%;    
+}
+
+.dropdown_container li>* {
+    color:#44699d;
+}
+
+.dropdown_container li:hover >* {
+    color: white !important;
+}
+
+
+
+@media only screen and (max-width: 920px) {
+
+
+.list_container li > * {
+    font-size: 1.2vw;
+}
+
+.logo_container, .logo_container h2 {
+    width: 0px !important;
+    font-size: 0px !important;
+    height: 0px !important;
+}
+
+.logo_container img {
+    width:0;
+    height: 0;
+}
+}
