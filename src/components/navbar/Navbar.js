@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FONT_COLOR_BLUE } from "../../constants/color_constants";
 import logo_aic from "../../images/AIC-logo.png";
 import "./Navbar.css";
-import { dropdownRoutes } from "../../constants/route_constants";
+import { navRoutes } from "../../constants/route_constants";
 import { useDispatch } from "react-redux";
 import { drawerToggle } from "../../redux/slices/appStates.slice";
 
@@ -37,6 +37,27 @@ const Navbar = () => {
     [navBgColor]
   );
 
+  const RenderNavRoutes = ({ routeList }) => {
+    return routeList.map((route, index) => {
+      return (
+        <li key={index}>
+          <Link style={{ color: navFontColor }} to={route.path}>
+            {route.name}
+            {route.dropdownRoutes ? (
+              <i
+                className="bi bi-caret-down-fill"
+                style={{ marginLeft: "2px", marginTop: "2px" }}
+              />
+            ) : null}
+          </Link>
+          {route.dropdownRoutes ? (
+            <RenderDropdown dropdownRoutes={route.dropdownRoutes} />
+          ) : null}
+        </li>
+      );
+    });
+  };
+
   const RenderDropdown = ({ dropdownRoutes }) => {
     return (
       <div
@@ -61,66 +82,7 @@ const Navbar = () => {
         <h2 style={{ color: navFontColor }}>AI CLUB</h2>
       </div>
       <div className={"list_container"}>
-        <li>
-          <Link style={{ color: navFontColor }} to="/">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link style={{ color: navFontColor }} to="/blogs">
-            Blogs
-          </Link>
-        </li>
-        <li>
-          <Link style={{ color: navFontColor }} to="/about">
-            About
-            <i
-              className="bi bi-caret-down-fill"
-              style={{ marginLeft: "2px", marginTop: "2px" }}
-            />
-          </Link>
-          <RenderDropdown dropdownRoutes={dropdownRoutes.about} />
-        </li>
-        <li>
-          <Link style={{ color: navFontColor }} to="/courses">
-            Courses
-          </Link>
-        </li>
-        <li>
-          <Link style={{ color: navFontColor }} to="/projects">
-            Projects
-          </Link>
-        </li>
-        <li>
-          <Link style={{ color: navFontColor }} to="/membership">
-            Membership
-          </Link>
-        </li>
-        <li>
-          <Link style={{ color: navFontColor }} to="/registeration">
-            Registeration
-            <i
-              className="bi bi-caret-down-fill"
-              style={{ marginLeft: "2px", marginTop: "2px" }}
-            />
-          </Link>
-          <RenderDropdown dropdownRoutes={dropdownRoutes.registration} />
-        </li>
-        <li>
-          <Link style={{ color: navFontColor }} to="/user-account">
-            My Account
-            <i
-              className="bi bi-caret-down-fill"
-              style={{ marginLeft: "2px", marginTop: "2px" }}
-            />
-          </Link>
-          <RenderDropdown dropdownRoutes={dropdownRoutes.myAccount} />
-        </li>
-        <li>
-          <Link style={{ color: navFontColor }} to="/contact_us">
-            Contact us
-          </Link>
-        </li>
+        <RenderNavRoutes routeList={navRoutes.default} />
       </div>
       <form className={"search_form"}>
         <input placeholder={"Search"}></input>

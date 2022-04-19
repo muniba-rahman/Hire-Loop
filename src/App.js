@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import "./App.css";
 import Drawer from "./components/drawer/Drawer";
 import Footer from "./components/footer/Footer";
@@ -26,9 +26,10 @@ function App() {
       <Drawer isOpen={drawerOpen} />
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-        <Route exact path="/about" element={<AboutPage />}></Route>
-        <Route exact path="/contact_us" element={<ContactPage />}></Route>
+        <Route path="/" element={<HomePage />} />
+        <Route exact path="/about" element={<AboutPage />} />
+        <Route exact path="/contact-us" element={<ContactPage />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <Footer />
     </div>

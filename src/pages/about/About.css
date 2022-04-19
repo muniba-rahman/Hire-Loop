@@ -1,0 +1,17 @@
+.banner {
+  width: 100vw;
+  height: 60vh;
+  background: url("../../images/banners/banner-dark-2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #fff;
+}
+
+.centered-flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

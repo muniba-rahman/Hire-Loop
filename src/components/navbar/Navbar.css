@@ -193,6 +193,7 @@ nav > * {
     outline: none;
     overflow: hidden;
     display: none;
+    margin: 10px;
   }
 }
 
@@ -224,8 +225,8 @@ nav > * {
 
   .drawerBtn {
     display: flex;
-    width: 10vw;
-    height: 10vw;
+    width: 8vw;
+    height: 8vw;
     border-radius: 8px;
   }
 }

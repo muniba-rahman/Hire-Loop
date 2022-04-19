@@ -91,12 +91,11 @@ h3 {
   align-items: center;
   background: linear-gradient(
     45deg,
-    #f17c5841,
-    #fa00604f,
-    #7016ff41,
-    #06ffc53d,
-    #ebd1423b,
-    #ff380657
+    #901aff80,
+    #59129c80,
+    #3b00dd4f,
+    #3c70ff3d,
+    #44699d6e
   );
   background-size: 600% 100%;
   animation: gradient 8s linear infinite;
@@ -136,7 +135,8 @@ h3 {
   background-color: #44699d;
 }
 .joinUsBtn:hover {
-  background-color: #353c63;
+  background-color: #6f7ed3;
+  color: black;
 }
 .joinUsBtn:focus {
   background-color: #1a2149 !important;
@@ -150,7 +150,7 @@ h3 {
 
 .imageBg2 {
   background-repeat: no-repeat;
-  background-color: rgb(22, 0, 83);
+  background-color: #160053;
   height: 100%;
   flex: 1;
   border-radius: 0% 10% 10% 0%;
