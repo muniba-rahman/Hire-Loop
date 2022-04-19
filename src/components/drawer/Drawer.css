@@ -4,6 +4,23 @@
   overflow: hidden;
 }
 
+.drawer-routeList {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100vh;
+}
+
+.routeItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.5px solid rgb(182, 182, 182);
+  margin: 0 10px;
+  list-style-type: none;
+}
+
 @media only screen and (orientation: portrait), (max-width: 500px) {
   .overlay_closed {
     width: 0;
