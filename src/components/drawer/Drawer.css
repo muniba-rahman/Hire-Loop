@@ -11,14 +11,62 @@
   height: 100vh;
 }
 
+.routeItem-container{
+  display: flex;
+  flex-direction:column;
+  align-items: stretch;
+  border-bottom: 0.5px solid rgb(182, 182, 182);
+  margin: 0px 8px;
+
+}
+
 .routeItem {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 0.5px solid rgb(182, 182, 182);
   margin: 0 10px;
   list-style-type: none;
+}
+
+.drawer_container_close {
+  overflow-x: hidden;
+  position: fixed;
+  width: 0vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 2000;
+  transition: width 0.5s;
+}
+
+.dropdownRoutes {
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  justify-content: center;
+  margin-left: 10%;
+  transition: max-height 0.3s;
+
+}
+
+.dropdownClose {
+  height: 0%;
+  display: none;
+  overflow: hidden;
+  transition: max-height 0.3s;
+}
+
+.dropdownOpen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  background-color: white;
+  transition: max-height 0.3s;
+}
+
+.dropdownOpen li {
+  border-bottom: 0.5px solid rgb(182, 182, 182);
 }
 
 @media only screen and (orientation: portrait), (max-width: 500px) {
@@ -34,16 +82,6 @@
     height: 100vh;
   }
 
-  .drawer_container_close {
-    overflow-x: hidden;
-    position: fixed;
-    width: 0vw;
-    height: 100vh;
-    background-color: white;
-    z-index: 2000;
-    transition: width 0.5s;
-  }
-
   .drawer_container_open {
     overflow-x: hidden;
     position: fixed;
@@ -52,5 +90,7 @@
     background-color: white;
     z-index: 2000;
     transition: width 0.5s;
+    border-right: 1px solid rgb(82, 82, 82);
+
   }
 }

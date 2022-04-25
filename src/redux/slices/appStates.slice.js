@@ -10,10 +10,14 @@ const appStates = createSlice({
   initialState,
   reducers: {
     drawerToggle(state) {
+      console.log(state.drawer_open);
       state.drawer_open = !state.drawer_open;
     },
+    closeDrawer(state) {
+      state.drawer_open = false;
+    }
   },
 });
 
-export const { drawerToggle } = appStates.actions;
+export const { drawerToggle, closeDrawer } = appStates.actions;
 export default appStates.reducer;

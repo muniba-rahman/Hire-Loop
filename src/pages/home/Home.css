@@ -298,7 +298,7 @@ h3 {
   justify-content: flex-start;
   width: 100%;
   padding: 0 10%;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 
 .blog {

@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { drawerToggle } from "../../redux/slices/appStates.slice";
+import { drawerToggle, closeDrawer } from "../../redux/slices/appStates.slice";
 import { Link } from "react-router-dom";
 import "./Drawer.css";
 import { navRoutes } from "../../constants/route_constants";
+import { useSwipeable } from "react-swipeable";
 
 const Drawer = ({ isOpen }) => {
   const dispatch = useDispatch();
+  const [dropdownOpen, setDropdownOpen] = useState([
+    false, false, false
+  ])
+  const swipeHandler = useSwipeable({
+    onSwipedLeft: (e) => {
+      dispatch(drawerToggle());
+      document.body.style.overflow = "auto";
+    }
+  })
+
+  useEffect(()=>{
+    console.log(dropdownOpen)
+  }, [dropdownOpen])
 
   const handleDrawerClicked = (e) => {
     e.stopPropagation();
@@ -16,29 +30,65 @@ const Drawer = ({ isOpen }) => {
     console.log(routeList);
     return routeList.map((route, index) => {
       return (
-        <div key={index} className={"routeItem"}>
-          <Link
-            to={route.path}
-            style={{
-              width: "80%",
-              padding: "8px",
-              textAlign: "left",
-            }}
-          >
-            {route.name}
-          </Link>
-          {route.dropdownRoutes ? (
-            <i
-              className="bi bi-chevron-down"
-              style={{
-                width: "20%",
-                alignSelf: "stretch",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+        <div key={index} className={"routeItem-container"}>
+          <div className={"routeItem"} 
+            onClick={()=>{
+              if(route.dropdownRoutes){
+                let newArray = [...dropdownOpen]
+                newArray[route.dropdownIndex] = !newArray[route.dropdownIndex];
+                setDropdownOpen(newArray)
+              }
+            }}>
+            <Link
+              onClick={()=>{
+                dispatch(closeDrawer());
+                document.body.style.overflow = "auto";
               }}
-            />
-          ) : null}
+              to={route.path}
+              style={{
+                width: "80%",
+                padding: "8px",
+                textAlign: "left",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {route.name}
+            </Link>
+            {route.dropdownRoutes ? (
+              <i
+                className="bi bi-chevron-down"
+                style={{
+                  width: "20%",
+                  alignSelf: "stretch",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              />
+            ) : null}
+          </div>
+          {
+            route.dropdownRoutes? (
+              <div className={`dropdownRoutes ${dropdownOpen[route.dropdownIndex]? 'dropdownOpen':'dropdownClose'}`}>
+                {route.dropdownRoutes.map((dropdownRoute, index)=>{
+                  return(
+                    <Link 
+                      key={index} 
+                      to={dropdownRoute.path}
+                      style={{
+                        padding: "5px",
+                        textAlign: "left",
+                        whiteSpace: "nowrap",
+                        borderBottom: "0.5px solid rgb(182, 182, 182)"
+                      }}
+                    >
+                      {dropdownRoute.name}</Link>
+                  )
+                })}
+              </div>
+            ): null
+          }      
+        
         </div>
       );
     });
@@ -53,6 +103,7 @@ const Drawer = ({ isOpen }) => {
       }}
     >
       <div
+        {...swipeHandler}
         className={isOpen ? "drawer_container_open" : "drawer_container_close"}
         onClick={handleDrawerClicked}
       >
@@ -61,6 +112,7 @@ const Drawer = ({ isOpen }) => {
           <RenderRouteList routeList={navRoutes.default} />
         </div>
       </div>
+     
     </div>
   );
 };

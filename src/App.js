@@ -9,14 +9,14 @@ import AboutPage from "./pages/about/AboutPage";
 import ContactPage from "./pages/contact/ContactPage";
 import "./pages/home/HomePage";
 import HomePage from "./pages/home/HomePage";
-import { drawerToggle } from "./redux/slices/appStates.slice";
+import { closeDrawer } from "./redux/slices/appStates.slice";
 
 function App() {
   const drawerOpen = useSelector((state) => state.appStates.drawer_open);
   const dispatch = useDispatch();
   useEffect(() => {
-    if (drawerOpen == true) {
-      dispatch(drawerToggle());
+    if (drawerOpen === true) {
+      dispatch(closeDrawer());
       document.body.style.overflow = "auto";
     }
   }, []);
