@@ -8,41 +8,36 @@ import { useSwipeable } from "react-swipeable";
 
 const Drawer = ({ isOpen }) => {
   const dispatch = useDispatch();
-  const [dropdownOpen, setDropdownOpen] = useState([
-    false, false, false
-  ])
+  const [dropdownOpen, setDropdownOpen] = useState([false, false, false]);
   const swipeHandler = useSwipeable({
     onSwipedLeft: (e) => {
       dispatch(drawerToggle());
       document.body.style.overflow = "auto";
-    }
-  })
-
-  useEffect(()=>{
-    console.log(dropdownOpen)
-  }, [dropdownOpen])
-
+    },
+  });
   const handleDrawerClicked = (e) => {
     e.stopPropagation();
   };
 
   const RenderRouteList = ({ routeList }) => {
-    console.log(routeList);
     return routeList.map((route, index) => {
       return (
         <div key={index} className={"routeItem-container"}>
-          <div className={"routeItem"} 
-            onClick={()=>{
-              if(route.dropdownRoutes){
-                let newArray = [...dropdownOpen]
+          <div
+            className={"routeItem"}
+            onClick={() => {
+              if (route.dropdownRoutes) {
+                let newArray = [...dropdownOpen];
                 newArray[route.dropdownIndex] = !newArray[route.dropdownIndex];
-                setDropdownOpen(newArray)
+                setDropdownOpen(newArray);
               }
-            }}>
+            }}
+          >
             <Link
-              onClick={()=>{
+              onClick={() => {
                 dispatch(closeDrawer());
                 document.body.style.overflow = "auto";
+                setDropdownOpen([false, false, false]);
               }}
               to={route.path}
               style={{
@@ -67,28 +62,36 @@ const Drawer = ({ isOpen }) => {
               />
             ) : null}
           </div>
-          {
-            route.dropdownRoutes? (
-              <div className={`dropdownRoutes ${dropdownOpen[route.dropdownIndex]? 'dropdownOpen':'dropdownClose'}`}>
-                {route.dropdownRoutes.map((dropdownRoute, index)=>{
-                  return(
-                    <Link 
-                      key={index} 
-                      to={dropdownRoute.path}
-                      style={{
-                        padding: "5px",
-                        textAlign: "left",
-                        whiteSpace: "nowrap",
-                        borderBottom: "0.5px solid rgb(182, 182, 182)"
-                      }}
-                    >
-                      {dropdownRoute.name}</Link>
-                  )
-                })}
-              </div>
-            ): null
-          }      
-        
+          {route.dropdownRoutes ? (
+            <div
+              className={`dropdownRoutes ${
+                dropdownOpen[route.dropdownIndex]
+                  ? "dropdownOpen"
+                  : "dropdownClose"
+              }`}
+            >
+              {route.dropdownRoutes.map((dropdownRoute, index) => {
+                return (
+                  <Link
+                    onClick={() => {
+                      setDropdownOpen([false, false, false]);
+                      dispatch(closeDrawer());
+                    }}
+                    key={index}
+                    to={dropdownRoute.path}
+                    style={{
+                      padding: "5px",
+                      textAlign: "left",
+                      whiteSpace: "nowrap",
+                      borderBottom: "0.5px solid rgb(182, 182, 182)",
+                    }}
+                  >
+                    {dropdownRoute.name}
+                  </Link>
+                );
+              })}
+            </div>
+          ) : null}
         </div>
       );
     });
@@ -112,7 +115,6 @@ const Drawer = ({ isOpen }) => {
           <RenderRouteList routeList={navRoutes.default} />
         </div>
       </div>
-     
     </div>
   );
 };

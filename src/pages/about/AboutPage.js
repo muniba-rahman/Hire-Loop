@@ -8,8 +8,11 @@ export default function AboutPage() {
         className={"banner"}
         href={"https://www.vecteezy.com/free-vector/black-background"}
       >
-        <div className={"overlay centered-flex-column"}>
-          <h1>About</h1>
+        <div
+          className={"overlay titleContainer"}
+          style={{ alignItems: "center", justifyContent: "center" }}
+        >
+          <h1>ABOUT US</h1>
         </div>
       </section>
       <section></section>
