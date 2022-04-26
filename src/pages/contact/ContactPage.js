@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import Banner from "../../components/banner/Banner";
 
 export default function ContactPage() {
   return (
     <div>
-        <h1>Contact Us</h1>
+      <Banner title={"CONTACT US"} />
     </div>
-  )
+  );
 }

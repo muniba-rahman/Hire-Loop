@@ -1,0 +1,12 @@
+.banner {
+  width: 100vw;
+  height: 60vh;
+  background: url("../../images/banners/banner-dark-2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
