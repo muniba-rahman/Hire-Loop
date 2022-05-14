@@ -27,7 +27,8 @@ const Drawer = ({ isOpen }) => {
             className={"routeItem"}
             onClick={() => {
               if (route.dropdownRoutes) {
-                let newArray = [...dropdownOpen];
+                //check if route has a drop down
+                let newArray = [...dropdownOpen]; // copy
                 newArray[route.dropdownIndex] = !newArray[route.dropdownIndex];
                 setDropdownOpen(newArray);
               }

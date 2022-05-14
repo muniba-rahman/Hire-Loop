@@ -11,19 +11,19 @@ export const navRoutes = {
         { name: "Gallery", path: "/gallery" },
         { name: "Achievements", path: "/achievements" },
       ],
-      dropdownIndex: 0
+      dropdownIndex: 0,
     },
     { name: "Courses", path: "/courses" },
     { name: "Projects", path: "/projects" },
     { name: "Membership", path: "/membership" },
     {
       name: "Registeration",
-      path: "/student-registeration",
+      path: "/registration",
       dropdownRoutes: [
-        { name: "Student Registeration", path: "/student-registeration" },
-        { name: "Instructor Registeration", path: "/student-registeration" },
+        { name: "Student Registeration", path: "/student" },
+        { name: "Instructor Registeration", path: "/instructor" },
       ],
-      dropdownIndex: 1
+      dropdownIndex: 1,
     },
     {
       name: "My Account",
@@ -33,7 +33,7 @@ export const navRoutes = {
         { name: "My Courses", path: "/my-courses" },
         { name: "Account Settings", path: "/account-settings" },
       ],
-      dropdownIndex: 2
+      dropdownIndex: 2,
     },
     { name: "Contact Us", path: "/contact-us" },
   ],
