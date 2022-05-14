@@ -6,7 +6,7 @@ export const navRoutes = {
       name: "About",
       path: "/about",
       dropdownRoutes: [
-        { name: "Our Teams", path: "/our-teams" },
+        { name: "Our Teams", path: "our-teams" },
         { name: "Events", path: "/events" },
         { name: "Gallery", path: "/gallery" },
         { name: "Achievements", path: "/achievements" },
@@ -41,10 +41,10 @@ export const navRoutes = {
 
 export const dropdownRoutes = {
   about: [
-    { name: "Our Teams", path: "/our-teams" },
-    { name: "Events", path: "/events" },
-    { name: "Gallery", path: "/gallery" },
-    { name: "Achievements", path: "/achievements" },
+    { name: "Our Teams", path: "about/our-teams" },
+    { name: "Events", path: "about/events" },
+    { name: "Gallery", path: "about/gallery" },
+    { name: "Achievements", path: "about/achievements" },
   ],
   registration: [
     { name: "Student Registeration", path: "/student-registeration" },

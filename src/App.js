@@ -7,6 +7,7 @@ import Drawer from "./components/drawer/Drawer";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import AboutPage from "./pages/about/AboutPage";
+import OurTeamsPage from "./pages/about/OurTeamsPage";
 import ContactPage from "./pages/contact/ContactPage";
 import "./pages/home/HomePage";
 import HomePage from "./pages/home/HomePage";
@@ -41,7 +42,11 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route exact path="/about" element={<AboutPage />} />
+        <Route index path="/about" element={<AboutPage />} />
+        <Route path="/our-teams" element={<OurTeamsPage />} />
+        <Route path="/events" element={<OurTeamsPage />} />
+        <Route path="/achievements" element={<OurTeamsPage />} />
+        <Route path="/gallery" element={<OurTeamsPage />} />
         <Route exact path="/contact-us" element={<ContactPage />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
