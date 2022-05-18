@@ -2,13 +2,13 @@ import { get, post } from "../axiosConfig";
 
 const authServices = {
   register: (registerForm) => {
-    return post("user/register", registerForm);
+    return post("users/register", registerForm);
   },
   login: (loginForm) => {
-    return post("user/login", loginForm, {});
+    return post("users/login", loginForm);
   },
   authenticate: (accessToken) => {
-    return get("user/auth", { headers: { Authorization: accessToken } });
+    return get("users/auth", { headers: { Authorization: accessToken } });
   },
 };
 

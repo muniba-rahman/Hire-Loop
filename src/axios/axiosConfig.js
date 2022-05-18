@@ -5,6 +5,7 @@ import { DEV_URL } from "../constants/api_constants";
 export function GetApiRequestHeader(customHeader = {}) {
   return {
     Accept: "application/json",
+    "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*",
     "Cache-Control": "no-cache, no-store, must-revalidate",
     Pragma: "no-cache",
@@ -20,13 +21,11 @@ const instance = axios.create({
 });
 
 export function get(url, params) {
-  console.log("get param ===>", params);
   return instance.get(url, params);
 }
 
 export function post(url, body, params) {
-  console.log("post param ===>", params);
-  return instance.post(url, body, params);
+  return instance.post(url, body, params || {});
 }
 
 instance.interceptors.request.use(async (config) => {
