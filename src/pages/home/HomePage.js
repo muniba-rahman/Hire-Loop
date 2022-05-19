@@ -24,6 +24,7 @@ import {
   img_team_market,
   img_team_register,
   img_team_social,
+  OUR_TEAMS,
 } from "../../constants/image_constants";
 
 import {
@@ -40,20 +41,6 @@ export default function HomePage() {
     { image: ourProjects2, title: "Chat Bot" },
     { image: ourProjects3, title: "Object Detector" },
     { image: ourProjects4, title: "Text Detection" },
-  ];
-
-  const ourTeams = [
-    { image: img_team_excom },
-    { image: img_team_web },
-    { image: img_team_content },
-    { image: img_team_tech },
-    { image: img_team_manage },
-    { image: img_team_graphic },
-    { image: img_team_promo },
-    { image: img_team_creative },
-    { image: img_team_market },
-    { image: img_team_register },
-    { image: img_team_social },
   ];
 
   var dateOptions = {
@@ -107,7 +94,7 @@ export default function HomePage() {
   };
 
   return (
-    <div>
+    <div className={"homePage"}>
       <section className={"sec sec1"}>
         <div
           className={"imageBg"}
@@ -229,7 +216,7 @@ export default function HomePage() {
             centerSlidePercentage={100}
             infiniteLoop={true}
           >
-            {ourTeams.map((obj, index) => {
+            {OUR_TEAMS.map((obj, index) => {
               return (
                 <div
                   key={index}

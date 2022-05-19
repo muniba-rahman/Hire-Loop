@@ -10,3 +10,122 @@
   justify-content: center;
   color: #fff;
 }
+
+.aboutPage > .sec-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  flex: 1;
+  margin-top: 50px;
+  padding: 0px 30px;
+}
+
+.aboutPage > .sec-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  margin: 20vh 10vw;
+}
+
+.aboutPage > .sec-2 > div {
+  flex: 1;
+}
+
+.aboutPage > .sec-2 > .text-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding-left: 30px;
+  justify-content: center;
+}
+
+.aboutPage > .sec-3 {
+  margin: 20px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.aboutPage > .sec-3 > h6 {
+  width: 70%;
+  padding: 10px 0;
+  margin-bottom: 40px;
+}
+
+.aboutPage > .sec-4 {
+  padding: 10px 10vw;
+  margin: 20vh 0px;
+}
+
+.aboutPage > .sec-4 > .images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+}
+
+.aboutPage > .sec-4 > .images > div {
+  background-color: rgb(236, 236, 236);
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutPage > .sec-4 > .images > div > img {
+  object-fit: cover;
+  width: 100%;
+  height: 60vh;
+}
+
+@media only screen and (orientation: portrait), (max-width: 500px) {
+  .aboutPage > .banner {
+    height: 40vh;
+  }
+  .aboutPage > .sec-1,
+  .aboutPage > .sec-2 {
+    flex-direction: column;
+    padding: 0px 10px;
+  }
+  .aboutPage > .sec-1 {
+    margin: 5vh 10px;
+    border-bottom: 1px solid rgb(170, 170, 170);
+  }
+
+  .aboutPage > .sec-2 {
+    margin: 20px 10px 50px 10px;
+    border-bottom: 1px solid rgb(170, 170, 170);
+  }
+  .aboutPage > .sec-2 > div {
+    margin: 0;
+  }
+  .aboutPage > .sec-2 > .text-container {
+    padding: 0;
+    margin-top: 10px;
+  }
+  .aboutPage > h2 {
+    font-size: 5vh;
+  }
+
+  .aboutPage > .sec-3 {
+    margin: 0 5px;
+  }
+
+  .aboutPage > .sec-3 > h6 {
+    width: 95%;
+  }
+
+  .aboutPage > .sec-4 {
+    margin-top: 80px;
+  }
+
+  .aboutPage > .sec-4 > .images {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 1fr;
+  }
+
+  .aboutPage > .sec-4 > .images > div > img {
+    height: 40vh;
+  }
+}

@@ -36,15 +36,15 @@
   color: white;
 }
 
-h1 {
+.homePage > h1 {
   font-size: 3vw;
 }
 
-h2 {
+.homePage > h2 {
   font-size: 2vw;
 }
 
-h3 {
+.homePage > h3 {
   font-size: 1.5vw;
 }
 
@@ -394,20 +394,20 @@ h3 {
 }
 
 @media only screen and (orientation: portrait), (max-width: 500px) {
-  h1 {
+  .aboutPage > h1 {
     font-size: 26px !important;
     margin-bottom: 0px;
   }
 
-  h2 {
+  .aboutPage > h2 {
     font-size: 18px !important;
   }
 
-  h3 {
+  .aboutPage > h3 {
     font-size: 16px !important;
   }
 
-  p {
+  .aboutPage > p {
     font-size: 14px !important;
   }
 
