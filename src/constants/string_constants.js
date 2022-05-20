@@ -1,3 +1,16 @@
+import {
+  img_team_web,
+  img_team_content,
+  img_team_tech,
+  img_team_manage,
+  img_team_graphic,
+  img_team_promo,
+  img_team_creative,
+  img_team_market,
+  img_team_register,
+  img_team_social,
+} from "./image_constants";
+
 export const HOME_PAGE = {
   secTwo: [
     {
@@ -96,4 +109,394 @@ export const ABOUT_PAGE = {
       },
     ],
   },
+};
+
+export const OUR_TEAMS_PAGE = {
+  secOne: {
+    img: require("../images/teams/ourTeams1.jpeg"),
+    title: "Our Excom",
+    para: "The ExCom is a collection of insightful and devoted individuals that were hand-picked by the prior directors and members of the AI club. They are a cohesive unit that the entire club falls back to when a crisis needs to be averted. They also distribute tasks among teams to allow maximum focus on projects and are steadfast in their decisions that lead the club to its ultimate goal, its one goal and that is to build an AI community within the grounds of NED and expand it throughout the world and bring AI enthusiasts to the world of entrepreneurs.",
+  },
+  secTwo: [
+    {
+      image: img_team_web,
+      path: "team-web-development",
+      pageData: {
+        bannerTitle: "Team Web Development",
+        secOne: {
+          title: "Web Design and Development",
+          para: ` If only given 15 minutes to consume content, 66% of people would prefer to see something beautifully designed versus something plain and simple. Your website’s design is an important part of your online marketing presence. The impression you make on them can either get them to remain on your page or leave your page.\nFor this purpose, here comes our super-talented Team Web design and Development. They bring creative and technical skills together to create beautiful and mobile-friendly static web pages. They create sites that are friendly for users, increase brand awareness, and generate leads.`,
+        },
+        secTwo: {
+          title: "Our Creative Team",
+          subTitle:
+            "Team Web Design And Development Create Beautiful And Mobile-Friendly Static Web Pages With Their Technical And Creative Skills.",
+          images: [
+            {
+              name: "Erbaz Kamran",
+              position: "Director",
+              img: require("../images/teams/web-dev/web-director.jpeg"),
+            },
+            {
+              name: "Tahira Akram",
+              position: "Member",
+              img: require("../images/teams/web-dev/Tahira-Akram.jpeg"),
+            },
+            {
+              name: "Muhammad Anas",
+              position: "Member",
+              img: require("../images/teams/web-dev/Muhammad-Anas.jpeg"),
+            },
+            {
+              name: "Zain Ammad",
+              position: "Member",
+              img: require("../images/teams/web-dev/Zain-ammad.jpeg"),
+            },
+          ],
+        },
+      },
+    },
+    {
+      image: img_team_content,
+      path: "team-content-writing",
+      pageData: {
+        bannerTitle: "Team Content Writing",
+        secOne: {
+          title: "Content Writing",
+          para: ` If only given 15 minutes to consume content, 66% of people would prefer to see something beautifully designed versus something plain and simple. Your website’s design is an important part of your online marketing presence. The impression you make on them can either get them to remain on your page or leave your page.\nFor this purpose, here comes our super-talented Team Web design and Development. They bring creative and technical skills together to create beautiful and mobile-friendly static web pages. They create sites that are friendly for users, increase brand awareness, and generate leads.`,
+        },
+        secTwo: {
+          title: "Our Creative Team",
+          subTitle:
+            "Team Web Design And Development Create Beautiful And Mobile-Friendly Static Web Pages With Their Technical And Creative Skills.",
+          images: [
+            {
+              name: "Erbaz Kamran",
+              position: "Director",
+              img: require("../images/teams/web-dev/web-director.jpeg"),
+            },
+            {
+              name: "Tahira Akram",
+              position: "Member",
+              img: require("../images/teams/web-dev/Tahira-Akram.jpeg"),
+            },
+            {
+              name: "Muhammad Anas",
+              position: "Member",
+              img: require("../images/teams/web-dev/Muhammad-Anas.jpeg"),
+            },
+            {
+              name: "Zain Ammad",
+              position: "Member",
+              img: require("../images/teams/web-dev/Zain-ammad.jpeg"),
+            },
+          ],
+        },
+      },
+    },
+    {
+      image: img_team_tech,
+      path: "team-technical",
+      pageData: {
+        bannerTitle: "Team Content Writing",
+        secOne: {
+          title: "Content Writing",
+          para: ` If only given 15 minutes to consume content, 66% of people would prefer to see something beautifully designed versus something plain and simple. Your website’s design is an important part of your online marketing presence. The impression you make on them can either get them to remain on your page or leave your page.\nFor this purpose, here comes our super-talented Team Web design and Development. They bring creative and technical skills together to create beautiful and mobile-friendly static web pages. They create sites that are friendly for users, increase brand awareness, and generate leads.`,
+        },
+        secTwo: {
+          title: "Our Creative Team",
+          subTitle:
+            "Team Web Design And Development Create Beautiful And Mobile-Friendly Static Web Pages With Their Technical And Creative Skills.",
+          images: [
+            {
+              name: "Erbaz Kamran",
+              position: "Director",
+              img: require("../images/teams/web-dev/web-director.jpeg"),
+            },
+            {
+              name: "Tahira Akram",
+              position: "Member",
+              img: require("../images/teams/web-dev/Tahira-Akram.jpeg"),
+            },
+            {
+              name: "Muhammad Anas",
+              position: "Member",
+              img: require("../images/teams/web-dev/Muhammad-Anas.jpeg"),
+            },
+            {
+              name: "Zain Ammad",
+              position: "Member",
+              img: require("../images/teams/web-dev/Zain-ammad.jpeg"),
+            },
+          ],
+        },
+      },
+    },
+    {
+      image: img_team_manage,
+      path: "team-management",
+      pageData: {
+        bannerTitle: "Team Content Writing",
+        secOne: {
+          title: "Content Writing",
+          para: ` If only given 15 minutes to consume content, 66% of people would prefer to see something beautifully designed versus something plain and simple. Your website’s design is an important part of your online marketing presence. The impression you make on them can either get them to remain on your page or leave your page.\nFor this purpose, here comes our super-talented Team Web design and Development. They bring creative and technical skills together to create beautiful and mobile-friendly static web pages. They create sites that are friendly for users, increase brand awareness, and generate leads.`,
+        },
+        secTwo: {
+          title: "Our Creative Team",
+          subTitle:
+            "Team Web Design And Development Create Beautiful And Mobile-Friendly Static Web Pages With Their Technical And Creative Skills.",
+          images: [
+            {
+              name: "Erbaz Kamran",
+              position: "Director",
+              img: require("../images/teams/web-dev/web-director.jpeg"),
+            },
+            {
+              name: "Tahira Akram",
+              position: "Member",
+              img: require("../images/teams/web-dev/Tahira-Akram.jpeg"),
+            },
+            {
+              name: "Muhammad Anas",
+              position: "Member",
+              img: require("../images/teams/web-dev/Muhammad-Anas.jpeg"),
+            },
+            {
+              name: "Zain Ammad",
+              position: "Member",
+              img: require("../images/teams/web-dev/Zain-ammad.jpeg"),
+            },
+          ],
+        },
+      },
+    },
+    {
+      image: img_team_graphic,
+      path: "team-graphics",
+      pageData: {
+        bannerTitle: "Team Content Writing",
+        secOne: {
+          title: "Content Writing",
+          para: ` If only given 15 minutes to consume content, 66% of people would prefer to see something beautifully designed versus something plain and simple. Your website’s design is an important part of your online marketing presence. The impression you make on them can either get them to remain on your page or leave your page.\nFor this purpose, here comes our super-talented Team Web design and Development. They bring creative and technical skills together to create beautiful and mobile-friendly static web pages. They create sites that are friendly for users, increase brand awareness, and generate leads.`,
+        },
+        secTwo: {
+          title: "Our Creative Team",
+          subTitle:
+            "Team Web Design And Development Create Beautiful And Mobile-Friendly Static Web Pages With Their Technical And Creative Skills.",
+          images: [
+            {
+              name: "Erbaz Kamran",
+              position: "Director",
+              img: require("../images/teams/web-dev/web-director.jpeg"),
+            },
+            {
+              name: "Tahira Akram",
+              position: "Member",
+              img: require("../images/teams/web-dev/Tahira-Akram.jpeg"),
+            },
+            {
+              name: "Muhammad Anas",
+              position: "Member",
+              img: require("../images/teams/web-dev/Muhammad-Anas.jpeg"),
+            },
+            {
+              name: "Zain Ammad",
+              position: "Member",
+              img: require("../images/teams/web-dev/Zain-ammad.jpeg"),
+            },
+          ],
+        },
+      },
+    },
+    {
+      image: img_team_promo,
+      path: "team-promotion",
+      pageData: {
+        bannerTitle: "Team Content Writing",
+        secOne: {
+          title: "Content Writing",
+          para: ` If only given 15 minutes to consume content, 66% of people would prefer to see something beautifully designed versus something plain and simple. Your website’s design is an important part of your online marketing presence. The impression you make on them can either get them to remain on your page or leave your page.\nFor this purpose, here comes our super-talented Team Web design and Development. They bring creative and technical skills together to create beautiful and mobile-friendly static web pages. They create sites that are friendly for users, increase brand awareness, and generate leads.`,
+        },
+        secTwo: {
+          title: "Our Creative Team",
+          subTitle:
+            "Team Web Design And Development Create Beautiful And Mobile-Friendly Static Web Pages With Their Technical And Creative Skills.",
+          images: [
+            {
+              name: "Erbaz Kamran",
+              position: "Director",
+              img: require("../images/teams/web-dev/web-director.jpeg"),
+            },
+            {
+              name: "Tahira Akram",
+              position: "Member",
+              img: require("../images/teams/web-dev/Tahira-Akram.jpeg"),
+            },
+            {
+              name: "Muhammad Anas",
+              position: "Member",
+              img: require("../images/teams/web-dev/Muhammad-Anas.jpeg"),
+            },
+            {
+              name: "Zain Ammad",
+              position: "Member",
+              img: require("../images/teams/web-dev/Zain-ammad.jpeg"),
+            },
+          ],
+        },
+      },
+    },
+    {
+      image: img_team_creative,
+      path: "team-creativity",
+      pageData: {
+        bannerTitle: "Team Content Writing",
+        secOne: {
+          title: "Content Writing",
+          para: ` If only given 15 minutes to consume content, 66% of people would prefer to see something beautifully designed versus something plain and simple. Your website’s design is an important part of your online marketing presence. The impression you make on them can either get them to remain on your page or leave your page.\nFor this purpose, here comes our super-talented Team Web design and Development. They bring creative and technical skills together to create beautiful and mobile-friendly static web pages. They create sites that are friendly for users, increase brand awareness, and generate leads.`,
+        },
+        secTwo: {
+          title: "Our Creative Team",
+          subTitle:
+            "Team Web Design And Development Create Beautiful And Mobile-Friendly Static Web Pages With Their Technical And Creative Skills.",
+          images: [
+            {
+              name: "Erbaz Kamran",
+              position: "Director",
+              img: require("../images/teams/web-dev/web-director.jpeg"),
+            },
+            {
+              name: "Tahira Akram",
+              position: "Member",
+              img: require("../images/teams/web-dev/Tahira-Akram.jpeg"),
+            },
+            {
+              name: "Muhammad Anas",
+              position: "Member",
+              img: require("../images/teams/web-dev/Muhammad-Anas.jpeg"),
+            },
+            {
+              name: "Zain Ammad",
+              position: "Member",
+              img: require("../images/teams/web-dev/Zain-ammad.jpeg"),
+            },
+          ],
+        },
+      },
+    },
+    {
+      image: img_team_market,
+      path: "team-marketing",
+      pageData: {
+        bannerTitle: "Team Content Writing",
+        secOne: {
+          title: "Content Writing",
+          para: ` If only given 15 minutes to consume content, 66% of people would prefer to see something beautifully designed versus something plain and simple. Your website’s design is an important part of your online marketing presence. The impression you make on them can either get them to remain on your page or leave your page.\nFor this purpose, here comes our super-talented Team Web design and Development. They bring creative and technical skills together to create beautiful and mobile-friendly static web pages. They create sites that are friendly for users, increase brand awareness, and generate leads.`,
+        },
+        secTwo: {
+          title: "Our Creative Team",
+          subTitle:
+            "Team Web Design And Development Create Beautiful And Mobile-Friendly Static Web Pages With Their Technical And Creative Skills.",
+          images: [
+            {
+              name: "Erbaz Kamran",
+              position: "Director",
+              img: require("../images/teams/web-dev/web-director.jpeg"),
+            },
+            {
+              name: "Tahira Akram",
+              position: "Member",
+              img: require("../images/teams/web-dev/Tahira-Akram.jpeg"),
+            },
+            {
+              name: "Muhammad Anas",
+              position: "Member",
+              img: require("../images/teams/web-dev/Muhammad-Anas.jpeg"),
+            },
+            {
+              name: "Zain Ammad",
+              position: "Member",
+              img: require("../images/teams/web-dev/Zain-ammad.jpeg"),
+            },
+          ],
+        },
+      },
+    },
+    {
+      image: img_team_register,
+      path: "team-registeration",
+      pageData: {
+        bannerTitle: "Team Content Writing",
+        secOne: {
+          title: "Content Writing",
+          para: ` If only given 15 minutes to consume content, 66% of people would prefer to see something beautifully designed versus something plain and simple. Your website’s design is an important part of your online marketing presence. The impression you make on them can either get them to remain on your page or leave your page.\nFor this purpose, here comes our super-talented Team Web design and Development. They bring creative and technical skills together to create beautiful and mobile-friendly static web pages. They create sites that are friendly for users, increase brand awareness, and generate leads.`,
+        },
+        secTwo: {
+          title: "Our Creative Team",
+          subTitle:
+            "Team Web Design And Development Create Beautiful And Mobile-Friendly Static Web Pages With Their Technical And Creative Skills.",
+          images: [
+            {
+              name: "Erbaz Kamran",
+              position: "Director",
+              img: require("../images/teams/web-dev/web-director.jpeg"),
+            },
+            {
+              name: "Tahira Akram",
+              position: "Member",
+              img: require("../images/teams/web-dev/Tahira-Akram.jpeg"),
+            },
+            {
+              name: "Muhammad Anas",
+              position: "Member",
+              img: require("../images/teams/web-dev/Muhammad-Anas.jpeg"),
+            },
+            {
+              name: "Zain Ammad",
+              position: "Member",
+              img: require("../images/teams/web-dev/Zain-ammad.jpeg"),
+            },
+          ],
+        },
+      },
+    },
+    {
+      image: img_team_social,
+      path: "team-social",
+      pageData: {
+        bannerTitle: "Team Content Writing",
+        secOne: {
+          title: "Content Writing",
+          para: ` If only given 15 minutes to consume content, 66% of people would prefer to see something beautifully designed versus something plain and simple. Your website’s design is an important part of your online marketing presence. The impression you make on them can either get them to remain on your page or leave your page.\nFor this purpose, here comes our super-talented Team Web design and Development. They bring creative and technical skills together to create beautiful and mobile-friendly static web pages. They create sites that are friendly for users, increase brand awareness, and generate leads.`,
+        },
+        secTwo: {
+          title: "Our Creative Team",
+          subTitle:
+            "Team Web Design And Development Create Beautiful And Mobile-Friendly Static Web Pages With Their Technical And Creative Skills.",
+          images: [
+            {
+              name: "Erbaz Kamran",
+              position: "Director",
+              img: require("../images/teams/web-dev/web-director.jpeg"),
+            },
+            {
+              name: "Tahira Akram",
+              position: "Member",
+              img: require("../images/teams/web-dev/Tahira-Akram.jpeg"),
+            },
+            {
+              name: "Muhammad Anas",
+              position: "Member",
+              img: require("../images/teams/web-dev/Muhammad-Anas.jpeg"),
+            },
+            {
+              name: "Zain Ammad",
+              position: "Member",
+              img: require("../images/teams/web-dev/Zain-ammad.jpeg"),
+            },
+          ],
+        },
+      },
+    },
+  ],
 };

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Route, Routes, Navigate, useLocation } from "react-router-dom";
+import { Route, Routes, Navigate, useLocation, Outlet } from "react-router-dom";
 import "./App.css";
 import authServices from "./axios/services/auth.service";
 import Drawer from "./components/drawer/Drawer";
@@ -15,6 +15,8 @@ import InstructorRegisteration from "./pages/registration/InstructorRegisteratio
 import StudentRegisteration from "./pages/registration/StudentRegisteration";
 import SignInPage from "./pages/signIn/SignInPage";
 import { closeDrawer } from "./redux/slices/appStates.slice";
+import TeamPage from "./pages/about/TeamPage";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 
 function App() {
   const drawerOpen = useSelector((state) => state.appStates.drawer_open);
@@ -43,25 +45,31 @@ function App() {
     <div className="App">
       <Drawer isOpen={drawerOpen} />
       <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route index path="/about" element={<AboutPage />} />
-        <Route path="/our-teams" element={<OurTeamsPage />} />
-        <Route path="/events" element={<OurTeamsPage />} />
-        <Route path="/achievements" element={<OurTeamsPage />} />
-        <Route path="/gallery" element={<OurTeamsPage />} />
-        <Route
-          path="/student-registeration"
-          element={<StudentRegisteration />}
-        />
-        <Route
-          path="/instructor-registeration"
-          element={<InstructorRegisteration />}
-        />
-        <Route path="/sign-in" element={<SignInPage />} />
-        <Route exact path="/contact-us" element={<ContactPage />} />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
+      <ScrollToTop>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route index path="/about" element={<AboutPage />} />
+          <Route path="/our-teams" element={<Outlet />}>
+            <Route index element={<OurTeamsPage />} />
+            <Route path=":path" element={<TeamPage />} />
+          </Route>
+          <Route path="/events" element={<OurTeamsPage />} />
+          <Route path="/achievements" element={<OurTeamsPage />} />
+          <Route path="/gallery" element={<OurTeamsPage />} />
+          <Route
+            path="/student-registeration"
+            element={<StudentRegisteration />}
+          />
+          <Route
+            path="/instructor-registeration"
+            element={<InstructorRegisteration />}
+          />
+          <Route path="/sign-in" element={<SignInPage />} />
+          <Route exact path="/contact-us" element={<ContactPage />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </ScrollToTop>
+
       <Footer />
     </div>
   );

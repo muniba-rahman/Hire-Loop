@@ -78,6 +78,129 @@
   height: 60vh;
 }
 
+.ourTeamsPage .sec-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 10vh 10vw;
+}
+
+.ourTeamsPage .sec-1 div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ourTeamsPage .sec-1 img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.ourTeamsPage .text-container,
+.teamPage .text-container {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.ourTeamsPage .sec-2 {
+  margin-top: 20vh;
+  margin-bottom: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ourTeamsPage .sec-2 h6 {
+  width: 70%;
+}
+
+.ourTeamsPage .sec-2 .images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
+}
+
+.ourTeamsPage .images div {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  margin: 10px 20px;
+  position: relative;
+}
+
+.ourTeamsPage .sec-2 img {
+  object-fit: contain;
+  max-width: 100%;
+}
+
+.ourTeamsPage .images div:hover {
+  cursor: pointer;
+  background-color: rgb(170, 170, 170);
+}
+
+.ourTeamsPage .images .overlay {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  z-index: 100;
+  margin: 0;
+  background: transparent;
+}
+
+.ourTeamsPage .images .overlay:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.teamPage .sec-1 {
+  display: flex;
+  flex-direction: row;
+  margin: 50px 5vw;
+}
+
+.teamPage .sec-1 div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.teamPage .sec-1 img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.teamPage .sec-1 div {
+  display: flex;
+  justify-content: center;
+}
+
+.teamPage .sec-2 {
+  margin: 20vh 10vw;
+}
+
+.teamPage .sec-2 .images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+}
+
+.teamPage .sec-2 .image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(238, 235, 235);
+  width: 15vw;
+  border: 1px solid rgb(231, 231, 231);
+}
+
+.teamPage .sec-2 .image img {
+  object-fit: cover;
+  height: 25vw;
+  width: 100%;
+}
+
 @media only screen and (orientation: portrait), (max-width: 500px) {
   .banner {
     height: 40vh;
@@ -127,5 +250,32 @@
 
   .aboutPage > .sec-4 > .images > div > img {
     height: 40vh;
+  }
+
+  .ourTeamsPage .sec-1 {
+    flex-direction: column;
+    margin: 10vh 5vw 5vw 5vw;
+    border-bottom: 1px solid rgb(165, 164, 164);
+  }
+
+  .ourTeamsPage .text-container,
+  .teamsPage .text-container {
+    padding: 0;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .ourTeamsPage .sec-2 {
+    margin-top: 50px;
+  }
+  .ourTeamsPage .sec-2 h6 {
+    width: 100%;
+    padding: 5px 2vw;
+  }
+  .ourTeamsPage .sec-2 .images {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .ourTeamsPage .images div {
+    width: 90vw;
   }
 }
