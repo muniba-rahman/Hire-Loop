@@ -4,9 +4,8 @@ import RegisterationForm from "./RegisterationForm";
 
 function InstructorRegisteration() {
   return (
-    <div>
+    <div className={"registerationPage"}>
       <section
-        style={{ height: "100vh" }}
         className={"banner"}
         href={"https://www.vecteezy.com/free-vector/black-background"}
       >

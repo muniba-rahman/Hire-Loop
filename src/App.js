@@ -39,7 +39,11 @@ function App() {
     if (accessToken) {
       callAuthenticateRequest();
     }
+    if(drawerOpen === false && document.body.style.overflow != "auto"){
+      document.body.style.overflow = "auto";
+    }
   }, [location]); //this useEffect will be called on every re-render to re validate the auth token if present
+
 
   return (
     <div className="App">

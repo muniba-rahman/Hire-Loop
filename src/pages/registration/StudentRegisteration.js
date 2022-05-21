@@ -4,10 +4,9 @@ import RegisterationForm from "./RegisterationForm";
 
 function StudentRegisteration() {
   return (
-    <div>
+    <div className={"registerationPage"}>
       <section
-        style={{ height: "100vh" }}
-        className={"banner"}
+        class={"banner"}
         href={"https://www.vecteezy.com/free-vector/black-background"}
       >
         <div
@@ -21,7 +20,6 @@ function StudentRegisteration() {
           <RegisterationForm title={"Student"} />
         </div>
       </section>
-      <section></section>
     </div>
   );
 }
