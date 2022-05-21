@@ -25,13 +25,6 @@ const Drawer = ({ isOpen }) => {
         <div key={index} className={"routeItem-container"}>
           <div
             className={"routeItem"}
-            onClick={() => {
-              if (route.dropdownRoutes) {
-                let newArray = [...dropdownOpen];
-                newArray[route.dropdownIndex] = !newArray[route.dropdownIndex];
-                setDropdownOpen(newArray);
-              }
-            }}
           >
             <Link
               onClick={() => {
@@ -51,6 +44,13 @@ const Drawer = ({ isOpen }) => {
             </Link>
             {route.dropdownRoutes ? (
               <i
+                onClick={()=>{
+                  if (route.dropdownRoutes) {
+                    let newArray = [...dropdownOpen];
+                    newArray[route.dropdownIndex] = !newArray[route.dropdownIndex];
+                    setDropdownOpen(newArray);
+                  }
+                }}
                 className="bi bi-chevron-down"
                 style={{
                   width: "20%",
@@ -76,6 +76,8 @@ const Drawer = ({ isOpen }) => {
                     onClick={() => {
                       setDropdownOpen([false, false, false]);
                       dispatch(closeDrawer());
+                      document.body.style.overflow = "auto";
+
                     }}
                     key={index}
                     to={dropdownRoute.path}

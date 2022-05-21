@@ -1,6 +1,6 @@
 export const navRoutes = {
   default: [
-    { name: "Home", path: "/home" },
+    { name: "Home", path: "/" },
     { name: "Blogs", path: "/blogs" },
     {
       name: "About",

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Route, Routes, Navigate, Outlet } from "react-router-dom";
+import { Route, Routes, Navigate, Outlet, useLocation } from "react-router-dom";
 import "./App.css";
 import Drawer from "./components/drawer/Drawer";
 import Footer from "./components/footer/Footer";
@@ -19,12 +19,17 @@ import { closeDrawer } from "./redux/slices/appStates.slice";
 function App() {
   const drawerOpen = useSelector((state) => state.appStates.drawer_open);
   const dispatch = useDispatch();
+  const location = useLocation();
   useEffect(() => {
     if (drawerOpen === true) {
       dispatch(closeDrawer());
       document.body.style.overflow = "auto";
     }
   }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0); //page scrolls to top on page transition.
+  }, [location]);
+
 
   return (
     <div className="App">
