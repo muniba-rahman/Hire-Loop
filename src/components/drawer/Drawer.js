@@ -26,8 +26,6 @@ const Drawer = ({ isOpen }) => {
         <div key={index} className={"routeItem-container"}>
           <div
             className={"routeItem"}
-<<<<<<< HEAD
-=======
             onClick={() => {
               if (route.dropdownRoutes) {
                 //check if route has a drop down
@@ -36,7 +34,6 @@ const Drawer = ({ isOpen }) => {
                 setDropdownOpen(newArray);
               }
             }}
->>>>>>> development-aboutPage
           >
             <Link
               onClick={() => {
@@ -88,14 +85,11 @@ const Drawer = ({ isOpen }) => {
                     onClick={() => {
                       setDropdownOpen([false, false, false]);
                       dispatch(closeDrawer());
-<<<<<<< HEAD
                       document.body.style.overflow = "auto";
 
-=======
                       if (dropdownRoute.func) {
                         dropdownRoute.func(dispatch);
                       }
->>>>>>> development-aboutPage
                     }}
                     key={index}
                     to={dropdownRoute.path}

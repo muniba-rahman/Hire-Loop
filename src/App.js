@@ -1,25 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-<<<<<<< HEAD
 import { Route, Routes, Navigate, Outlet, useLocation } from "react-router-dom";
-=======
-import { Route, Routes, Navigate, useLocation, Outlet } from "react-router-dom";
->>>>>>> development-aboutPage
 import "./App.css";
 import authServices from "./axios/services/auth.service";
 import Drawer from "./components/drawer/Drawer";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import AboutPage from "./pages/about/AboutPage";
-<<<<<<< HEAD
-import EventsPage from "./pages/about/EventsPage";
-import GalleryPage from "./pages/about/GalleryPage";
-import OurAchievmentsPage from "./pages/about/OurAchievmentsPage";
 import OurTeamsPage from "./pages/about/OurTeamsPage";
-import BlogsPage from "./pages/blogs/BlogsPage";
-=======
-import OurTeamsPage from "./pages/about/OurTeamsPage";
->>>>>>> development-aboutPage
 import ContactPage from "./pages/contact/ContactPage";
 import "./pages/home/HomePage";
 import HomePage from "./pages/home/HomePage";
@@ -35,14 +23,11 @@ function App() {
   const { accessToken } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const location = useLocation();
-<<<<<<< HEAD
-=======
 
   const callAuthenticateRequest = async () => {
     const res = authServices.authenticate(accessToken);
   };
 
->>>>>>> development-aboutPage
   useEffect(() => {
     if (drawerOpen === true) {
       dispatch(closeDrawer());
@@ -68,28 +53,6 @@ function App() {
     <div className="App">
       <Drawer isOpen={drawerOpen} />
       <Navbar />
-<<<<<<< HEAD
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="about"
-          element={
-            <div>
-              <Outlet />
-            </div>
-          }
-        >
-          <Route index element={<AboutPage />} />
-          <Route path="our-teams" element={<OurTeamsPage />} />
-          <Route path="events" element={<EventsPage />} />
-          <Route path="gallery" element={<GalleryPage />} />
-          <Route path="our-achievements" element={<OurAchievmentsPage />} />
-        </Route>
-        <Route path="blogs" element={<BlogsPage />} />
-        <Route exact path="/contact-us" element={<ContactPage />} />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-=======
       <ScrollToTop>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -115,7 +78,6 @@ function App() {
         </Routes>
       </ScrollToTop>
 
->>>>>>> development-aboutPage
       <Footer />
     </div>
   );

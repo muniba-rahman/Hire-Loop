@@ -8,17 +8,10 @@ export const navRoutes = {
       name: "About",
       path: "/about",
       dropdownRoutes: [
-<<<<<<< HEAD
-        { name: "Our Teams", path: "about/our-teams" },
-        { name: "Events", path: "about/events" },
-        { name: "Gallery", path: "about/gallery" },
-        { name: "Achievements", path: "about/our-achievements" },
-=======
         { name: "Our Teams", path: "our-teams" },
         { name: "Events", path: "/events" },
         { name: "Gallery", path: "/gallery" },
         { name: "Achievements", path: "/achievements" },
->>>>>>> development-aboutPage
       ],
       dropdownIndex: 0,
     },
@@ -33,13 +26,10 @@ export const navRoutes = {
         { name: "As Instructor", path: "/instructor-registeration" },
       ],
       dropdownIndex: 1,
-<<<<<<< HEAD
-=======
     },
     {
       name: "Sign In",
       path: "/sign-in",
->>>>>>> development-aboutPage
     },
     { name: "Contact Us", path: "/contact-us" },
   ],
@@ -80,8 +70,6 @@ export const navRoutes = {
     { name: "Contact Us", path: "/contact-us" },
   ],
 };
-<<<<<<< HEAD
-=======
 
 export const dropdownRoutes = {
   about: [
@@ -100,4 +88,3 @@ export const dropdownRoutes = {
     { name: "Account Settings", path: "/account-settings" },
   ],
 };
->>>>>>> development-aboutPage

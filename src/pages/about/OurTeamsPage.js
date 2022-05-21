@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { OUR_TEAMS } from "../../constants/image_constants";
 import { OUR_TEAMS_PAGE } from "../../constants/string_constants";
 import "./About.css";
 
