@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { drawerToggle, closeDrawer } from "../../redux/slices/appStates.slice";
 import { Link } from "react-router-dom";
 import "./Drawer.css";
@@ -9,6 +9,7 @@ import { useSwipeable } from "react-swipeable";
 const Drawer = ({ isOpen }) => {
   const dispatch = useDispatch();
   const [dropdownOpen, setDropdownOpen] = useState([false, false, false]);
+  const user = useSelector((state) => state.user.data);
   const swipeHandler = useSwipeable({
     onSwipedLeft: (e) => {
       dispatch(drawerToggle());
@@ -25,6 +26,17 @@ const Drawer = ({ isOpen }) => {
         <div key={index} className={"routeItem-container"}>
           <div
             className={"routeItem"}
+<<<<<<< HEAD
+=======
+            onClick={() => {
+              if (route.dropdownRoutes) {
+                //check if route has a drop down
+                let newArray = [...dropdownOpen]; // copy
+                newArray[route.dropdownIndex] = !newArray[route.dropdownIndex];
+                setDropdownOpen(newArray);
+              }
+            }}
+>>>>>>> development-aboutPage
           >
             <Link
               onClick={() => {
@@ -76,8 +88,14 @@ const Drawer = ({ isOpen }) => {
                     onClick={() => {
                       setDropdownOpen([false, false, false]);
                       dispatch(closeDrawer());
+<<<<<<< HEAD
                       document.body.style.overflow = "auto";
 
+=======
+                      if (dropdownRoute.func) {
+                        dropdownRoute.func(dispatch);
+                      }
+>>>>>>> development-aboutPage
                     }}
                     key={index}
                     to={dropdownRoute.path}
@@ -114,7 +132,9 @@ const Drawer = ({ isOpen }) => {
       >
         <div className={"drawer-routeList"}>
           <div style={{ height: "4vh" }} />
-          <RenderRouteList routeList={navRoutes.default} />
+          <RenderRouteList
+            routeList={user._id ? navRoutes.signedIn : navRoutes.default}
+          />
         </div>
       </div>
     </div>
