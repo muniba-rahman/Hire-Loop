@@ -42,6 +42,7 @@ nav > * {
   justify-content: flex-end;
   list-style: none;
   align-items: stretch;
+  padding-right:2%;
 }
 
 .list_container li {
@@ -104,6 +105,7 @@ nav > * {
   background-color: #44699d !important;
   color: white !important;
 }
+
 
 .list_container li > *:hover + .dropdown_container {
   transform: scaleY(1);

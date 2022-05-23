@@ -97,12 +97,12 @@ const Navbar = () => {
           routeList={user._id ? navRoutes.signedIn : navRoutes.default}
         />
       </div>
-      <form className={"search_form"}>
+      {/* <form className={"search_form"}>
         <input placeholder={"Search"}></input>
         <button style={{ color: navFontColor }}>
           <i className="bi bi-search" />
         </button>
-      </form>
+      </form> */}
       <button
         className={"drawerBtn"}
         style={{ backgroundColor: navFontColor }}
