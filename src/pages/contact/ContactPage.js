@@ -29,11 +29,9 @@ export default function ContactPage() {
     if (validation(formData)) {
       const emailResponse = await emailServices.sendEmail(formData);
       if (emailResponse.data?.messageId) {
-        setStatus("Email Sent!!");
+        alert("Email Sent!!");
       } else {
-        setStatus(
-          "Email Not Sent. Please Check Network Connection or Resubmit."
-        );
+        alert("Email Not Sent. Please Check Network Connection or Resubmit.");
       }
     }
   };
