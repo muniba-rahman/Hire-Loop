@@ -10,14 +10,18 @@ function SignInPage() {
     email: "",
     password: "",
   });
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.data);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (form.email && form.password) {
       dispatch(login(form)).then((res) => {
-        navigate("/", { replace: true });
+        console.log("signIn ===>", res);
+        console.log("user ===>", user);
+        if (res.payload?.user?._id) {
+          navigate(`/dashboard/${res.payload.user._id}`, { replace: true });
+        }
       });
     }
   };

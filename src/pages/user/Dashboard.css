@@ -1,0 +1,37 @@
+.dashboard .dash-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background-color: rgb(224, 224, 224);
+}
+
+.dashboard .dash-nav div {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  border-right: black;
+  border-left: black;
+  transition: background-color 0.3s;
+}
+
+.dashboard .dash-nav div:hover {
+  flex: 1;
+  border-right: black;
+  border-left: black;
+  background-color: #44699d;
+}
+
+.dashboard .dash-nav div > * {
+  color: black;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.dashboard .dash-nav div > *:hover {
+  color: white;
+  width: 100%;
+}
+
+@media only screen and (orientation: portrait), (max-width: 500px) {
+}

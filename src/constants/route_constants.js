@@ -9,9 +9,9 @@ export const navRoutes = {
       path: "/about",
       dropdownRoutes: [
         { name: "Our Teams", path: "our-teams" },
-        { name: "Events", path: "/events" },
-        { name: "Gallery", path: "/gallery" },
-        { name: "Achievements", path: "/achievements" },
+        { name: "Events", path: "events" },
+        { name: "Gallery", path: "gallery" },
+        { name: "Achievements", path: "achievements" },
       ],
       dropdownIndex: 0,
     },
@@ -54,9 +54,6 @@ export const navRoutes = {
       name: "My Account",
       path: "/dashboard",
       dropdownRoutes: [
-        { name: "Dashboard", path: "/dashboard" },
-        { name: "My Courses", path: "/my-courses" },
-        { name: "Account Settings", path: "/account-settings" },
         {
           name: "Log Out",
           path: "/",

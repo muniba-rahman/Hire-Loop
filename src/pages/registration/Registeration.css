@@ -1,7 +1,7 @@
-.registerationPage .banner{
+.registerationPage .banner {
   display: flex;
   flex-direction: column;
-  height:auto;
+  height: auto;
 }
 
 .registerForm {
@@ -67,7 +67,7 @@
 
 @media only screen and (orientation: portrait), (max-width: 500px) {
   .registerForm {
-    margin-top: 0vh;
+    margin-top: 10vh;
   }
   .registerForm form {
     width: 90%;

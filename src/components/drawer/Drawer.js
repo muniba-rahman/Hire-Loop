@@ -41,7 +41,11 @@ const Drawer = ({ isOpen }) => {
                 document.body.style.overflow = "auto";
                 setDropdownOpen([false, false, false]);
               }}
-              to={route.path}
+              to={
+                route.path == "/dashboard"
+                  ? `${route.path}/${user._id}`
+                  : route.path
+              }
               style={{
                 width: "80%",
                 padding: "8px",
@@ -53,10 +57,11 @@ const Drawer = ({ isOpen }) => {
             </Link>
             {route.dropdownRoutes ? (
               <i
-                onClick={()=>{
+                onClick={() => {
                   if (route.dropdownRoutes) {
                     let newArray = [...dropdownOpen];
-                    newArray[route.dropdownIndex] = !newArray[route.dropdownIndex];
+                    newArray[route.dropdownIndex] =
+                      !newArray[route.dropdownIndex];
                     setDropdownOpen(newArray);
                   }
                 }}
@@ -92,7 +97,11 @@ const Drawer = ({ isOpen }) => {
                       }
                     }}
                     key={index}
-                    to={dropdownRoute.path}
+                    to={
+                      route.path == "/dashboard"
+                        ? `${route.path}/${user._id}`
+                        : route.path
+                    }
                     style={{
                       padding: "5px",
                       textAlign: "left",

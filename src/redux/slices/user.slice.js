@@ -31,6 +31,28 @@ export const login = createAsyncThunk(
   }
 );
 
+export const validateToken = createAsyncThunk(
+  "user/validateToken",
+  async (_, thunkAPI) => {
+    console.log("This function is called");
+    const { rejectWithValue, getState } = thunkAPI;
+    const {
+      user: { token },
+    } = getState();
+    console.log("token ===>", user, token);
+    try {
+      const authenticate = await authServices.authenticate(token); //authentication is performed before access is given
+      if (authenticate.data?.message === "AUTHENTIC") {
+        return; //user data is sent as response so that it can be updated in state and user can log in
+      } else {
+        return rejectWithValue({ error: "UNAUTHORIZED" });
+      }
+    } catch (error) {
+      return rejectWithValue({ error: error.response.data }); //response error
+    }
+  }
+);
+
 const user = createSlice({
   name: "user",
   initialState,
@@ -46,6 +68,10 @@ const user = createSlice({
       state.token = payload.accessToken;
     });
     builder.addCase(login.rejected, (state, action) => {});
+    builder.addCase(validateToken.rejected, (state, action) => {
+      state.data = {};
+      state.token = null;
+    });
   },
 });
 

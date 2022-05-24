@@ -42,7 +42,14 @@ const Navbar = () => {
     return routeList.map((route, index) => {
       return (
         <li key={index}>
-          <Link style={{ color: navFontColor }} to={route.path}>
+          <Link
+            style={{ color: navFontColor }}
+            to={
+              route.path == "/dashboard"
+                ? `${route.path}/${user._id}`
+                : route.path
+            }
+          >
             {route.name}
             {route.dropdownRoutes ? (
               <i
@@ -68,7 +75,11 @@ const Navbar = () => {
         {dropdownRoutes.map((route, index) => (
           <li key={index}>
             <Link
-              to={route.path}
+              to={
+                route.path == "/dashboard"
+                  ? `${route.path}/${user._id}`
+                  : route.path
+              }
               style={{ color: navFontColor }}
               onClick={
                 route.func

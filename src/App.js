@@ -17,16 +17,17 @@ import SignInPage from "./pages/signIn/SignInPage";
 import { closeDrawer } from "./redux/slices/appStates.slice";
 import TeamPage from "./pages/about/TeamPage";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
+import Dashboard from "./pages/user/Dashboard";
+import CreateBlog from "./pages/user/CreateBlog";
+import UserCourses from "./pages/user/UserCourses";
+import AccountSettings from "./pages/user/AccountSettings";
+import { validateToken } from "./redux/slices/user.slice";
 
 function App() {
   const drawerOpen = useSelector((state) => state.appStates.drawer_open);
-  const { accessToken } = useSelector((state) => state.user);
+  const { token } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const location = useLocation();
-
-  const callAuthenticateRequest = async () => {
-    const res = authServices.authenticate(accessToken);
-  };
 
   useEffect(() => {
     if (drawerOpen === true) {
@@ -38,16 +39,14 @@ function App() {
     window.scrollTo(0, 0); //page scrolls to top on page transition.
   }, [location]);
 
-
   useEffect(() => {
-    if (accessToken) {
-      callAuthenticateRequest();
+    if (token) {
+      dispatch(validateToken());
     }
-    if(drawerOpen === false && document.body.style.overflow != "auto"){
+    if (drawerOpen === false && document.body.style.overflow != "auto") {
       document.body.style.overflow = "auto";
     }
   }, [location]); //this useEffect will be called on every re-render to re validate the auth token if present
-
 
   return (
     <div className="App">
@@ -56,6 +55,13 @@ function App() {
       <ScrollToTop>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          {token ? (
+            <Route path="/dashboard/:userid" element={<Dashboard />}>
+              <Route path="create-blog" element={<CreateBlog />} />
+              <Route index path="my-courses" element={<UserCourses />} />
+              <Route path="account-settings" element={<AccountSettings />} />
+            </Route>
+          ) : null}
           <Route index path="/about" element={<AboutPage />} />
           <Route path="/our-teams" element={<Outlet />}>
             <Route index element={<OurTeamsPage />} />
