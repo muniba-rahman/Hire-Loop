@@ -10,7 +10,6 @@ export default function ContactPage() {
     comment: "",
   });
   const [err, setErr] = useState("");
-  const [status, setStatus] = useState("");
 
   const validation = (data) => {
     for (var key in data) {
