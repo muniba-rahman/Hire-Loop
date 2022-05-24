@@ -16,7 +16,7 @@ export function GetApiRequestHeader(customHeader = {}) {
 
 const instance = axios.create({
   baseURL: DEV_URL,
-  timeout: 1000,
+  timeout: 6000,
   headers: GetApiRequestHeader(),
 });
 
@@ -34,11 +34,13 @@ instance.interceptors.request.use(async (config) => {
 
 instance.interceptors.response.use(
   function (response) {
+    //console.log("axios intercepted response ====>", response);
     //console api response here
     return response;
   },
   function (error) {
     //console api response error here
+    //console.log("axios intercepted error ====>", error);
     return Promise.reject(error);
   }
 );
