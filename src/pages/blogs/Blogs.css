@@ -78,6 +78,7 @@
 
   .blog-page .sec-1 .content {
     width: 90%;
-    padding: 10px;
+    padding: 0px;
+    margin: 4px;
   }
 }
