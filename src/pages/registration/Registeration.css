@@ -67,7 +67,7 @@
 
 @media only screen and (orientation: portrait), (max-width: 500px) {
   .registerForm {
-    margin-top: 10vh;
+    margin-top: 30vw;
   }
   .registerForm form {
     width: 90%;
