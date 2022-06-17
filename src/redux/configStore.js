@@ -11,10 +11,12 @@ import {
 import storage from "redux-persist/lib/storage";
 import appStatesReducer from "./slices/appStates.slice";
 import userReducer from "./slices/user.slice";
+import blogReducer from "./slices/blog.slice";
 
 const rootReducer = combineReducers({
   appStates: appStatesReducer,
   user: userReducer,
+  blog: blogReducer,
 });
 
 const persistConfig = {

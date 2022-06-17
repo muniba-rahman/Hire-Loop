@@ -17,9 +17,9 @@ function SignInPage() {
     e.preventDefault();
     if (form.email && form.password) {
       dispatch(login(form)).then((res) => {
-        console.log("signIn ===>", res);
-        console.log("user ===>", user);
-        if (res.payload?.user?._id) {
+        if (res.error) {
+          alert("Error! Unable to sign in.");
+        } else if (res.payload?.user?._id) {
           navigate(`/dashboard/${res.payload.user._id}`, { replace: true });
         }
       });

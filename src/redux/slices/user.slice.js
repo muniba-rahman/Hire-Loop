@@ -26,6 +26,7 @@ export const login = createAsyncThunk(
         return rejectWithValue({ error: "Access Token Not Recieved" }); //login api error
       }
     } catch (error) {
+      console.log(error);
       return rejectWithValue({ error: error.response.data }); //response error
     }
   }
@@ -34,12 +35,10 @@ export const login = createAsyncThunk(
 export const validateToken = createAsyncThunk(
   "user/validateToken",
   async (_, thunkAPI) => {
-    console.log("This function is called");
     const { rejectWithValue, getState } = thunkAPI;
     const {
       user: { token },
     } = getState();
-    console.log("token ===>", user, token);
     try {
       const authenticate = await authServices.authenticate(token); //authentication is performed before access is given
       if (authenticate.data?.message === "AUTHENTIC") {

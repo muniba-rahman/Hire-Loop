@@ -500,3 +500,14 @@ export const OUR_TEAMS_PAGE = {
     },
   ],
 };
+
+export const OUR_ACHIEVEMENTS_PAGE = {
+  secOne: {
+    headings: ["WHAT WE ACHIEVED", "OUR SUCCESS STORY"],
+    paras: [
+      `In AI and Data Science once an event happens rarely, it is called outlier and when it becomes frequent it is trend. To change trend it takes hard working and dedicated individuals like Usman Abbas and M. Affan Khan who are trend setters. AI Club continues the legacy of gifting courses and promoting achievers of AI with gifts and supports them fully for the future. Following that, Usman Abbas and M. Affan Khan were awarded Google Home and Alexa for being the most hardworking students and completed Deep Learning Specialization in NED at undergrad-level.\nIn AI Club we not only support and promote our AI community but also go an extra mile to appreciate their efforts, AI Club with history of gifting courses and runner ups of Kaggle competitors this time giving away Alexa and Google Home devices to all the dedicated learners who first completed Deep Learning specialization. Cheers to the winners!!`,
+      `Ai has been around for years but it is quiet recent that it has started making progress. It is the one of the most growing field in the world now and has already transformed many industries and it will transform many more industries in the near future but the question is that are we ready for that change? We aren’t. The core purpose of AIC is to motivate students to learn AI on their own and spread knowledge of AI. There are countless resources available on the internet to learn about AI/ML.The beginning is always the hardest but it also the secret of getting ahead . Dont wait for anything as you already have what it takes to become the best in the field.`,
+    ],
+    author: "-Usman Abbas, Former VP AIC",
+  },
+};

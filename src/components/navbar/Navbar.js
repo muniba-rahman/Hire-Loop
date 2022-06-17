@@ -46,7 +46,7 @@ const Navbar = () => {
             style={{ color: navFontColor }}
             to={
               route.path == "/dashboard"
-                ? `${route.path}/${user._id}`
+                ? `${route.path}/${user._id}/account-settings`
                 : route.path
             }
           >
@@ -77,7 +77,7 @@ const Navbar = () => {
             <Link
               to={
                 route.path == "/dashboard"
-                  ? `${route.path}/${user._id}`
+                  ? `${route.path}/${user._id}/account-settings`
                   : route.path
               }
               style={{ color: navFontColor }}

@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes, Navigate, Outlet, useLocation } from "react-router-dom";
 import "./App.css";
-import authServices from "./axios/services/auth.service";
 import Drawer from "./components/drawer/Drawer";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
@@ -22,6 +21,9 @@ import CreateBlog from "./pages/user/CreateBlog";
 import UserCourses from "./pages/user/UserCourses";
 import AccountSettings from "./pages/user/AccountSettings";
 import { validateToken } from "./redux/slices/user.slice";
+import BlogsPage from "./pages/blogs/BlogsPage";
+import OurAchievmentsPage from "./pages/about/OurAchievmentsPage";
+import BlogPage from "./pages/blogs/BlogPage";
 
 function App() {
   const drawerOpen = useSelector((state) => state.appStates.drawer_open);
@@ -41,12 +43,19 @@ function App() {
 
   useEffect(() => {
     if (token) {
-      dispatch(validateToken());
+      dispatch(validateToken()).then((res, err) => {
+        console.log("token validation: res, err ===>", res, err);
+        if (res.type === "user/validateToken/rejected") {
+          alert(
+            "ACCESS TOKEN EXPIRED:\nYour access token has expired and you have been logged out. Please log in again."
+          );
+        }
+      });
     }
     if (drawerOpen === false && document.body.style.overflow != "auto") {
       document.body.style.overflow = "auto";
     }
-  }, [location]); //this useEffect will be called on every re-render to re validate the auth token if present
+  }, [location]); //this useEffect will be called on every route change to re validate the auth token if present
 
   return (
     <div className="App">
@@ -55,10 +64,14 @@ function App() {
       <ScrollToTop>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/blogs" element={<Outlet />}>
+            <Route index element={<BlogsPage />} />
+            <Route path=":id" element={<BlogPage />} />
+          </Route>
           {token ? (
             <Route path="/dashboard/:userid" element={<Dashboard />}>
-              <Route path="create-blog" element={<CreateBlog />} />
               <Route index path="my-courses" element={<UserCourses />} />
+              <Route path="create-blog" element={<CreateBlog />} />
               <Route path="account-settings" element={<AccountSettings />} />
             </Route>
           ) : null}
@@ -68,7 +81,7 @@ function App() {
             <Route path=":path" element={<TeamPage />} />
           </Route>
           <Route path="/events" element={<OurTeamsPage />} />
-          <Route path="/achievements" element={<OurTeamsPage />} />
+          <Route path="/achievements" element={<OurAchievmentsPage />} />
           <Route path="/gallery" element={<OurTeamsPage />} />
           <Route
             path="/student-registeration"

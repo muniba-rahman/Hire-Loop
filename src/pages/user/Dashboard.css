@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: row;
   align-items: stretch;
+  justify-content: center;
   background-color: rgb(224, 224, 224);
 }
 
@@ -33,5 +34,120 @@
   width: 100%;
 }
 
+.dashboard .dash-nav .selected {
+  background-color: #2d5183;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.create-blog {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-blog .quill-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-blog .input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0px;
+  width: 100%;
+}
+.create-blog .input-container label {
+  font-size: x-large;
+}
+.create-blog .input-container input {
+  text-align: center;
+  padding: 4px;
+  font-size: x-large;
+  width: 50%;
+  border: 0px;
+  border-bottom: 2px solid black;
+}
+
+.create-blog .input-container input:focus {
+  border: 0px;
+  outline: none;
+  border-bottom: 2px solid #548fe2;
+}
+
+.create-blog .input-container {
+  margin-top: 40px;
+}
+
+.create-blog .input-container textarea {
+  width: 60%;
+}
+
+.file-input {
+  display: flex;
+  flex-direction: column;
+  margin: 25px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(204, 204, 204);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.file-input input {
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.file-input img {
+  width: 30%;
+}
+
+.create-blog .button-container {
+  width: 40%;
+}
+.react-quill {
+  height: 80vh;
+}
+
 @media only screen and (orientation: portrait), (max-width: 500px) {
+  .dashboard .dash-nav {
+    font-size: small;
+  }
+
+  .create-blog h2 {
+    padding: 0 40px;
+  }
+  .create-blog .input-container input,
+  .create-blog .input-container textarea {
+    width: 95%;
+  }
+  .file-input {
+    width: 97%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .file-input input {
+    width: 97%;
+  }
+  .file-input img {
+    width: 80%;
+  }
+
+  .create-blog .button-container {
+    width: 80%;
+  }
+  .react-quill {
+    height: 100vw;
+    width: 90vw;
+    margin-bottom: 40px;
+  }
 }
