@@ -98,9 +98,9 @@ const Drawer = ({ isOpen }) => {
                     }}
                     key={index}
                     to={
-                      route.path == "/dashboard"
-                        ? `${route.path}/${user._id}`
-                        : route.path
+                      dropdownRoute.path == "/dashboard"
+                        ? `${dropdownRoute.path}/${user._id}`
+                        : dropdownRoute.path
                     }
                     style={{
                       padding: "5px",
