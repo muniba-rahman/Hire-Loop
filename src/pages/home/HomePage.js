@@ -215,20 +215,11 @@ export default function HomePage() {
         <div className={"navSpace"}></div>
       </section>
       <section className={"sec5 sec"}>
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "column",
-            justifyContent: "center",
-            textAlign: "center",
-          }}
-        >
+        <div className={"sec_div"}>
           <h1 style={{ width: "80%", textAlign: "center", paddingTop: "5%" }}>
             How AI Club Works
           </h1>
-          <h3 style={{ width: "80%", textAlign: "center" }}>
+          <h3>
             The AI Club Brings The Young AI Startups Into The Spotlight Linking
             Them With Potential Investors.
           </h3>

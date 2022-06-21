@@ -1,12 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
-import ReactQuill from "react-quill";
+import ReactQuill, { Quill } from "react-quill";
 import "quill/dist/quill.snow.css";
 import blogServices from "../../axios/services/blog.service";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import ImageResize from "quill-image-resize-module-react";
+
+Quill.register("modules/imageResize", ImageResize);
 
 const CreateBlog = () => {
   const user = useSelector((state) => state.user);
+  const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
   const [form, setForm] = useState({
     title: "",
@@ -24,10 +28,14 @@ const CreateBlog = () => {
       [{ script: "sub" }, { script: "super" }],
       ["blockquote", "code-block"],
       [{ list: "ordered" }, { list: "bullet" }],
-      ["link", "image", "video"],
+      ["link", "image"],
       [{ align: "" }, { align: "center" }, { align: "right" }],
       ["clean"],
     ],
+    imageResize: {
+      parchment: Quill.import("parchment"),
+      modules: ["Resize", "DisplaySize"],
+    },
   };
 
   const getBase64 = (file) =>
@@ -56,24 +64,27 @@ const CreateBlog = () => {
       return false;
     });
     if (!fieldIsEmpty) {
+      //form is valid and request will be initiated
+      setLoader(true); //when loader is true, no more requests can be sent
       const response = await blogServices.postBlog({
         blog: blog,
         accessToken: user.token,
       });
       if (response.status == 200) {
+        setLoader(false);
         navigate(`/blogs`, { replace: true });
       } else if ((response.status = 413)) {
+        setLoader(false);
         alert(
-          "ERROR: File Size Exceeded Maximum",
-          "File size should not exceed 16 MB. Thankyou."
+          "ERROR: File Size Exceeded Maximum\nFile size should not exceed 16 MB. Thankyou."
         );
       } else {
-        alert("ERROR", "blog could not be posted for some reason");
+        setLoader(false);
+        alert("ERROR\nblog could not be posted for some reason");
       }
     } else {
       alert(
-        "Fill all fields",
-        "All fields are required for posting the blog. Thankyou for complying."
+        "Fill all fields\nAll fields are required for posting the blog. Thankyou for complying."
       );
     }
   };
@@ -130,14 +141,10 @@ const CreateBlog = () => {
           modules={modules}
           theme="snow"
           className={"react-quill"}
-          style={{
-            marginBottom: "15vh",
-          }}
           onChange={(val) => {
             setForm({ ...form, content: val });
           }}
         />
-
         <div className={"input-container"}>
           <label>Preview</label>
           <textarea
@@ -156,7 +163,9 @@ const CreateBlog = () => {
           </p>
         </div>
         <div className={"button-container"} style={{ marginBottom: "10vh" }}>
-          <button className={"button-primary"}>Post</button>
+          <button className={"button-primary"} disabled={!loader}>
+            Post
+          </button>
         </div>
       </form>
     </div>

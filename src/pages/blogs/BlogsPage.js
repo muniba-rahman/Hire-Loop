@@ -3,19 +3,28 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import blogServices from "../../axios/services/blog.service";
 import Banner from "../../components/banner/Banner";
+import { css } from "@emotion/react";
+import ClipLoader from "react-spinners/ClipLoader";
+
 import { deleteBlogs, getBlogList } from "../../redux/slices/blog.slice";
 import "./Blogs.css";
 
 function BlogsPage() {
   const [blogs, setBlogs] = useState([]);
+  const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
   // const blogs = useSelector((state) => state.blog.blogs);
 
   const getBlogListAPI = async () => {
+    setLoader(true);
     const response = await blogServices.getBlogList();
     console.log("getBlogList ===>", response);
     if (response.data?.length && response.status === 200) {
       setBlogs(response.data);
+      setLoader(false);
+    } else {
+      setLoader(false);
+      alert("Error! Could not fetch data from server");
     }
   };
   const getBlogAPI = async (blog) => {
@@ -61,7 +70,11 @@ function BlogsPage() {
     <div className={"blogsPage"}>
       <Banner title={"Blogs"} />
       <section className={"sec-1"}>
-        {blogs?.length > 0 ? <RenderBlogsList /> : <></>}
+        {loader == false && blogs?.length > 0 ? (
+          <RenderBlogsList />
+        ) : (
+          <ClipLoader size={100} loading={loader} color={"blue"} />
+        )}
       </section>
     </div>
   );

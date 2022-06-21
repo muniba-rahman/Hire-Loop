@@ -55,7 +55,7 @@
   justify-content: center;
   align-self: center;
   align-items: center;
-  width: 50%;
+  width: 80%;
 }
 
 .sec_div h1 {
@@ -298,7 +298,6 @@
   justify-content: center;
   width: 100%;
   padding: 0 5%;
-  overflow-x: hidden;
 }
 
 .blog {
@@ -308,8 +307,8 @@
   justify-content: flex-start;
   flex: 1;
   position: relative;
-  border: 1px solid rgb(145, 145, 145);
-  background-color: rgba(129, 129, 129, 0.1);
+  border: 1px solid rgb(192, 192, 192);
+  background-color: rgb(247, 247, 247);
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
@@ -317,7 +316,7 @@
 }
 
 .blog:hover {
-  background-color: rgba(129, 129, 129, 0.3);
+  background-color: rgb(211, 211, 211);
 }
 
 .blog > * {
@@ -325,22 +324,22 @@
   font-size: small;
   border-radius: 10px;
 }
-.blog {
-  height: 30vh;
-}
 
 .blog-1 {
   margin: 0px 20px;
 }
 
+.blog img {
+  height: 180px;
+}
+
 .blog div {
-  height: 200px;
   overflow-y: auto;
   align-self: center;
   margin: 10px;
   padding: 5px;
-
-  background-color: rgba(255, 255, 255, 0.6);
+  height: 240px;
+  background-color: rgb(233, 233, 233);
 }
 
 .carouselHome .carousel.carousel-slider .control-arrow {
@@ -452,7 +451,7 @@
     text-align: center;
   }
   .sec_div {
-    width: 80%;
+    width: 90vw;
   }
 
   .projList {
@@ -531,12 +530,11 @@
   .blog {
     flex-direction: column;
     align-items: stretch;
-    width: 100%;
+    width: 90%;
     flex: 1;
     margin-top: 10px;
     border: 1px solid rgb(206, 206, 206);
     border-radius: 20px;
-    background-color: rgba(150, 150, 150, 0.1);
     padding: 3%;
   }
 
@@ -576,6 +574,6 @@
   .blog div {
     padding-top: 10px;
     overflow-y: auto;
-    height: 20vh;
+    height: 25vh;
   }
 }
