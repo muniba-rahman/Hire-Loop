@@ -20,8 +20,13 @@ const RegisterationForm = ({ title }) => {
         password: form.password,
         member_type: title == "Instructor" ? "INSTRUCTOR" : "STUDENT",
       };
-      const response = await authServices.register(registerationForm);
-      setErr("");
+      authServices.register(registerationForm).then((res)=>{
+        
+        setErr("")
+      }).catch((err) => {
+        setErr(err?.response?.data?.error || "Unexpected Error")
+      });
+      setErr(err);
     } else {
       setErr("Passwords do not match");
     }
@@ -54,7 +59,7 @@ const RegisterationForm = ({ title }) => {
           type="password"
           onChange={(e) => setForm({ ...form, confirmation: e.target.value })}
         />
-        <p>{err}</p>
+        <p style={{color:"red"}}>{err}</p>
         <button type="submit">Register</button>
       </form>
     </div>
