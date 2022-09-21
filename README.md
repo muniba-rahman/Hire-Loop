@@ -29,7 +29,7 @@ Open a New Window on VS Code, and select on the Start Page, the option of Clone 
 ### Step 3
 Now it might ask for authentication, so follow the steps as provided. Create the project folder anywhere in your disk.
 
-## Step 4
+### Step 4
 Now your project folder will be set up and opened. Run `npm install` and then `npm run`. The project will be launched on `localhost:3000/`.
 
 ## Committing and Pushing
