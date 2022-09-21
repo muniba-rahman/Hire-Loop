@@ -1,3 +1,40 @@
+# WELCOME!
+This project is designed using React JS with Redux-Toolkit as the state management solution, and Axios as the HTTP Client for API services.
+
+Let us first discuss the branch layout of the repository.
+
+### `master`: 
+is the main release branch from where we will deploy our web-app front end to any particular hosting server.
+
+### `development`: 
+is the branch where all subset development features are merged together before merging with the release branch (master).
+
+### `development-FEATURE`: 
+where `FEATURE` is variable, is a branch that is taken out from the development branch to add a new feature, page, UI update etc. These branches are where developers will be able to commit and push there work for testing and merging to the development branch by the team leads. It is completely allowed to make any new branches from `development` or another `development-FEATURE` branch.
+
+## Setting Up The Project On Your Local Machine
+### Prerequisites:
+- VSCode
+- Git CLI
+- Node JS (NPM)
+- Git extension for VSCode
+- Live Server extension on VSCode (Recommended)
+
+### Step 1
+Clone the `development` branch by clicking on the +GREEN+ `Code` button. Copy the HTTPS URL.
+
+### Step 2
+Open a New Window on VS Code, and select on the Start Page, the option of Clone Git Repository. Click on it and input the URL at the input field shown. 
+
+### Step 3
+Now it might ask for authentication, so follow the steps as provided. Create the project folder anywhere in your disk.
+
+## Step 4
+Now your project folder will be set up and opened. Run `npm install` and then `npm run`. The project will be launched on `localhost:3000/`.
+
+## Committing and Pushing
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
