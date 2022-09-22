@@ -21,7 +21,7 @@ where `FEATURE` is variable, is a branch that is taken out from the development 
 - Live Server extension on VSCode (Recommended)
 
 ### Step 1
-Clone the `development` branch by clicking on the +GREEN+ `Code` button. Copy the HTTPS URL.
+Clone the `development` branch by clicking on the GREEN  `Code` button. Copy the HTTPS URL.
 
 ### Step 2
 Open a New Window on VS Code, and select on the Start Page, the option of Clone Git Repository. Click on it and input the URL at the input field shown. 
@@ -43,6 +43,8 @@ Next you push the branch to the repository using the command `git push`. If the 
 ### Step 3
 Now to place a merge request, open the branch you are assigned, and click on the option of Contribute. And then select \
 [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests). On the right, a panel is shown where you can select an Assignee. Assign your project lead, write some comments and press `Create Pull Request`.
+
+## Project Structure
 
 # Getting Started with Create React App
 
