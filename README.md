@@ -1,4 +1,4 @@
-# WELCOME!
+# WELCOME TO THE FRONT LINES!
 This project is designed using React JS with Redux-Toolkit as the state management solution, and Axios as the HTTP Client for API services.
 
 Let us first discuss the branch layout of the repository.
@@ -34,6 +34,15 @@ Now your project folder will be set up and opened. Run `npm install` and then `n
 
 ## Committing and Pushing
 
+### Step 1
+Once the assigned branch is ready for submission, you can easily run the command `git add .` for staging all changes. Then you can commit those changes locally using the command `git commit -m "any message or comments"`
+
+### Step 2
+Next you push the branch to the repository using the command `git push`. If the branch has not been set in the upstream then simply use the command: `git push --set-upstream origin <branch-name>`.
+
+### Step 3
+Now to place a merge request, open the branch you are assigned, and click on the option of Contribute. And then select \
+[https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests](Pull Request). On the right, a panel is shown where you can select an Assignee. Assign your project lead, write some comments and press `Create Pull Request`.
 
 # Getting Started with Create React App
 
