@@ -42,7 +42,7 @@ Next you push the branch to the repository using the command `git push`. If the 
 
 ### Step 3
 Now to place a merge request, open the branch you are assigned, and click on the option of Contribute. And then select \
-[https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests](Pull Request). On the right, a panel is shown where you can select an Assignee. Assign your project lead, write some comments and press `Create Pull Request`.
+[Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests). On the right, a panel is shown where you can select an Assignee. Assign your project lead, write some comments and press `Create Pull Request`.
 
 # Getting Started with Create React App
 
