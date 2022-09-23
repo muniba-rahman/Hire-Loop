@@ -68,7 +68,19 @@ Now to place a merge request, open the branch you are assigned, and click on the
 ## Workflow
 
 ### Step 1
-A task will be assigned to 
+A task will be assigned to the members using the Kanban board provided for the organization. Each member must fulfill the requirements\
+of the task to the best of their abilities
+
+### Step 2
+Apply `git fetch` and then `git pull` to update your local repositories. Then, use `git checkout <branch>` to start working\
+on the branch assigned to you
+
+### Step 3
+A task must not make changes inside files unrelated to the issue. However, if a breaking change is to be made,\
+then an issue can be raised and assigned to the team lead.
+
+### Step 4
+Once your task is completed, you can move the issue card forward to the next stage.
 
 # Getting Started with Create React App
 
