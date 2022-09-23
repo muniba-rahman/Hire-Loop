@@ -41,10 +41,34 @@ Once the assigned branch is ready for submission, you can easily run the command
 Next you push the branch to the repository using the command `git push`. If the branch has not been set in the upstream then simply use the command: `git push --set-upstream origin <branch-name>`.
 
 ### Step 3
-Now to place a merge request, open the branch you are assigned, and click on the option of Contribute. And then select \
-[Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests). On the right, a panel is shown where you can select an Assignee. Assign your project lead, write some comments and press `Create Pull Request`.
+Now to place a merge request, open the branch you are assigned, and click on the option of Contribute. And then select [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests). On the right, a panel is shown where you can select an Assignee. Assign your project lead, write some comments and press `Create Pull Request`.
 
 ## Project Structure
+
+- src 
+  - index.js: here is where the entire project rendered
+  - App.js: here is where the app is initialized
+  - pages
+    - folder for each base (parent) page which then have child pages
+      - pages files as functional components
+      - a css file for styles
+  - components
+    - reuseable components folders
+      - functional component js file
+      - css file
+  - constants
+    - global constants such as styles
+  - images
+    - all image files to be used
+  - redux
+    - config file and redux toolkit slices in slice folder
+  - axios
+    - config file and services folder
+
+## Workflow
+
+### Step 1
+A task will be assigned to 
 
 # Getting Started with Create React App
 
