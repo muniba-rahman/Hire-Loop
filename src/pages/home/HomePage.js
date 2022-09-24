@@ -12,48 +12,26 @@ import ourProjects4 from "../../images/ourProjects4.jpg";
 import blog1 from "../../images/blog1_mock.jpg";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import {
-  img_team_excom,
-  img_team_web,
-  img_team_content,
-  img_team_tech,
-  img_team_manage,
-  img_team_graphic,
-  img_team_promo,
-  img_team_creative,
-  img_team_market,
-  img_team_register,
-  img_team_social,
-} from "../../constants/image_constants";
+import { OUR_TEAMS } from "../../constants/image_constants";
 
 import {
   FONT_COLOR_BLUE,
   FONT_COLOR_DEFAULT,
 } from "../../constants/color_constants";
 import { HOME_PAGE } from "../../constants/string_constants";
+import { useEffect } from "react";
+import blogServices from "../../axios/services/blog.service";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   const [buttonIndex, setButtonIndex] = useState(0);
+  const [blogs, setBlogs] = useState([]);
   const secTwo = HOME_PAGE.secTwo;
   const ourProjectList = [
     { image: ourProjects1, title: "Cow Detector App" },
     { image: ourProjects2, title: "Chat Bot" },
     { image: ourProjects3, title: "Object Detector" },
     { image: ourProjects4, title: "Text Detection" },
-  ];
-
-  const ourTeams = [
-    { image: img_team_excom },
-    { image: img_team_web },
-    { image: img_team_content },
-    { image: img_team_tech },
-    { image: img_team_manage },
-    { image: img_team_graphic },
-    { image: img_team_promo },
-    { image: img_team_creative },
-    { image: img_team_market },
-    { image: img_team_register },
-    { image: img_team_social },
   ];
 
   var dateOptions = {
@@ -63,29 +41,13 @@ export default function HomePage() {
     day: "numeric",
   };
 
-  const blogList = [
-    {
-      image: blog1,
-      title: "AI and Psychiatry",
-      date: Date("11/2/2021"),
-      preview:
-        "WHAT EXACTLY IS PSYCHIATRY? The human psyche and the art of understanding it requires deep complexity as this field has a lot to offer.",
-    },
-    {
-      image: blog1,
-      title: "SELF DRIVING CARS: PROS AND CONS",
-      date: Date("7/2/2021"),
-      preview:
-        "NTRODUCTION:   So, there you are on a rainy night, and you have called a taxi. Strangely the driver does not talk. You arrived at",
-    },
-    {
-      image: blog1,
-      title: `Climate Change and AI's Prospects`,
-      date: Date("6/9/2021"),
-      preview:
-        "Of all the existential threats living species face in the current century and will be facing going into the future, Climate change remains to be",
-    },
-  ];
+  const getBlogListAPI = async () => {
+    const response = await blogServices.getBlogList(3);
+    console.log("getBlogList ===>", response);
+    if (response.data?.length && response.status === 200) {
+      setBlogs(response.data);
+    }
+  };
 
   const renderProjectList = (projects) => {
     return projects.map((obj, index) => {
@@ -106,8 +68,12 @@ export default function HomePage() {
     });
   };
 
+  useEffect(() => {
+    getBlogListAPI();
+  }, []);
+
   return (
-    <div>
+    <div className={"homePage"}>
       <section className={"sec sec1"}>
         <div
           className={"imageBg"}
@@ -229,7 +195,7 @@ export default function HomePage() {
             centerSlidePercentage={100}
             infiniteLoop={true}
           >
-            {ourTeams.map((obj, index) => {
+            {OUR_TEAMS.map((obj, index) => {
               return (
                 <div
                   key={index}
@@ -249,20 +215,11 @@ export default function HomePage() {
         <div className={"navSpace"}></div>
       </section>
       <section className={"sec5 sec"}>
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "column",
-            justifyContent: "center",
-            textAlign: "center",
-          }}
-        >
+        <div className={"sec_div"}>
           <h1 style={{ width: "80%", textAlign: "center", paddingTop: "5%" }}>
             How AI Club Works
           </h1>
-          <h3 style={{ width: "80%", textAlign: "center" }}>
+          <h3>
             The AI Club Brings The Young AI Startups Into The Spotlight Linking
             Them With Potential Investors.
           </h3>
@@ -305,24 +262,32 @@ export default function HomePage() {
           <h1>Our Blogs</h1>
         </div>
         <div className="blogsList">
-          {blogList.map((obj, i) => {
+          {blogs.map((obj, i) => {
             return (
-              <div key={i} className={`blog blog-${i}`}>
-                <img src={blog1} />
+              <div key={obj._id} className={`blog blog-${i}`}>
+                <img src={obj.thumbnail} />
                 <div style={{ textAlign: "left" }}>
-                  <h2 className="blogTitle">AI and Psychiatry</h2>
+                  <h4 className="blogTitle">{obj.title}</h4>
                   <p className="blogDate">
-                    {new Date(blogList[i].date).toLocaleDateString(
+                    {new Date(obj.created_on).toLocaleDateString(
                       "en-US",
                       dateOptions
                     )}
                   </p>
-                  <p className="blogPreview">{blogList[i].preview}</p>
+                  <p className="blogPreview">{obj.preview}</p>
                 </div>
               </div>
             );
           })}
         </div>
+        <Link
+          style={{
+            alignSelf: "flex-end",
+            marginRight: "20px",
+            marginTop: "20px",
+          }}
+          to={"/blogs"}
+        >{`Find More >>>`}</Link>
       </section>
     </div>
   );

@@ -4,13 +4,14 @@ import { FONT_COLOR_BLUE } from "../../constants/color_constants";
 import logo_aic from "../../images/AIC-logo.png";
 import "./Navbar.css";
 import { navRoutes } from "../../constants/route_constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { drawerToggle } from "../../redux/slices/appStates.slice";
 
 const Navbar = () => {
   const [navBgColor, setNavBgColor] = useState("#ffffff30");
   const [navFontColor, setFontColor] = useState("white");
   const [dropdownColor, setDropdownColor] = useState("#0000009d");
+  const user = useSelector((state) => state.user.data);
   const dispatch = useDispatch();
   const handleScrollEvent = (e) => {
     if (e.target.documentElement.scrollTop > 50 && navBgColor !== "white") {
@@ -41,7 +42,14 @@ const Navbar = () => {
     return routeList.map((route, index) => {
       return (
         <li key={index}>
-          <Link style={{ color: navFontColor }} to={route.path}>
+          <Link
+            style={{ color: navFontColor }}
+            to={
+              route.path == "/dashboard"
+                ? `${route.path}/${user._id}/account-settings`
+                : route.path
+            }
+          >
             {route.name}
             {route.dropdownRoutes ? (
               <i
@@ -66,7 +74,21 @@ const Navbar = () => {
       >
         {dropdownRoutes.map((route, index) => (
           <li key={index}>
-            <Link to={route.path} style={{ color: navFontColor }}>
+            <Link
+              to={
+                route.path == "/dashboard"
+                  ? `${route.path}/${user._id}/account-settings`
+                  : route.path
+              }
+              style={{ color: navFontColor }}
+              onClick={
+                route.func
+                  ? () => {
+                      route.func(dispatch);
+                    }
+                  : () => {}
+              }
+            >
               {route.name}
             </Link>
           </li>
@@ -82,14 +104,16 @@ const Navbar = () => {
         <h2 style={{ color: navFontColor }}>AI CLUB</h2>
       </div>
       <div className={"list_container"}>
-        <RenderNavRoutes routeList={navRoutes.default} />
+        <RenderNavRoutes
+          routeList={user._id ? navRoutes.signedIn : navRoutes.default}
+        />
       </div>
-      <form className={"search_form"}>
+      {/* <form className={"search_form"}>
         <input placeholder={"Search"}></input>
         <button style={{ color: navFontColor }}>
           <i className="bi bi-search" />
         </button>
-      </form>
+      </form> */}
       <button
         className={"drawerBtn"}
         style={{ backgroundColor: navFontColor }}

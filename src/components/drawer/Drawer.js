@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { drawerToggle, closeDrawer } from "../../redux/slices/appStates.slice";
 import { Link } from "react-router-dom";
 import "./Drawer.css";
@@ -9,6 +9,7 @@ import { useSwipeable } from "react-swipeable";
 const Drawer = ({ isOpen }) => {
   const dispatch = useDispatch();
   const [dropdownOpen, setDropdownOpen] = useState([false, false, false]);
+  const user = useSelector((state) => state.user.data);
   const swipeHandler = useSwipeable({
     onSwipedLeft: (e) => {
       dispatch(drawerToggle());
@@ -27,7 +28,8 @@ const Drawer = ({ isOpen }) => {
             className={"routeItem"}
             onClick={() => {
               if (route.dropdownRoutes) {
-                let newArray = [...dropdownOpen];
+                //check if route has a drop down
+                let newArray = [...dropdownOpen]; // copy
                 newArray[route.dropdownIndex] = !newArray[route.dropdownIndex];
                 setDropdownOpen(newArray);
               }
@@ -39,7 +41,11 @@ const Drawer = ({ isOpen }) => {
                 document.body.style.overflow = "auto";
                 setDropdownOpen([false, false, false]);
               }}
-              to={route.path}
+              to={
+                route.path == "/dashboard"
+                  ? `${route.path}/${user._id}`
+                  : route.path
+              }
               style={{
                 width: "80%",
                 padding: "8px",
@@ -51,6 +57,14 @@ const Drawer = ({ isOpen }) => {
             </Link>
             {route.dropdownRoutes ? (
               <i
+                onClick={() => {
+                  if (route.dropdownRoutes) {
+                    let newArray = [...dropdownOpen];
+                    newArray[route.dropdownIndex] =
+                      !newArray[route.dropdownIndex];
+                    setDropdownOpen(newArray);
+                  }
+                }}
                 className="bi bi-chevron-down"
                 style={{
                   width: "20%",
@@ -76,9 +90,18 @@ const Drawer = ({ isOpen }) => {
                     onClick={() => {
                       setDropdownOpen([false, false, false]);
                       dispatch(closeDrawer());
+                      document.body.style.overflow = "auto";
+
+                      if (dropdownRoute.func) {
+                        dropdownRoute.func(dispatch);
+                      }
                     }}
                     key={index}
-                    to={dropdownRoute.path}
+                    to={
+                      dropdownRoute.path == "/dashboard"
+                        ? `${dropdownRoute.path}/${user._id}`
+                        : dropdownRoute.path
+                    }
                     style={{
                       padding: "5px",
                       textAlign: "left",
@@ -112,7 +135,9 @@ const Drawer = ({ isOpen }) => {
       >
         <div className={"drawer-routeList"}>
           <div style={{ height: "4vh" }} />
-          <RenderRouteList routeList={navRoutes.default} />
+          <RenderRouteList
+            routeList={user._id ? navRoutes.signedIn : navRoutes.default}
+          />
         </div>
       </div>
     </div>

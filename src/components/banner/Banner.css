@@ -10,3 +10,9 @@
   justify-content: center;
   color: #fff;
 }
+
+@media only screen and (orientation: portrait), (max-width: 500px) {
+  .banner {
+    height: 40vh;
+  }
+}

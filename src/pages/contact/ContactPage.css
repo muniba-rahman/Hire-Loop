@@ -1,0 +1,137 @@
+.contactPage .sec-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 100px 80px 90px 80px;
+}
+
+.contactPage .sec-1 .left,
+.contactPage .sec-1 .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactPage .sec-1 .right {
+  text-align: left;
+  padding-left: 50px;
+  padding-top: 20px;
+}
+
+.contactPage .sec-1 .right h3 {
+  width: 80%;
+  font-weight: bolder;
+}
+
+.contactPage .sec-1 .name {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.contactPage .sec-1 .name input {
+  width: 80%;
+}
+
+.contactPage fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.contactPage label {
+  text-align: left;
+  margin-top: 20px;
+}
+.contactPage input,
+.contactPage textarea {
+  outline: none;
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 2px;
+  padding: 2px 4px;
+}
+.contactPage input:focus,
+.contactPage textarea:focus {
+  outline: none;
+  border: 1px solid #44699d;
+}
+
+.contactPage button {
+  outline: none;
+  border: none;
+  margin-top: 20px;
+  padding: 5px;
+  width: 100%;
+  background-color: #44699d;
+  color: white;
+  border-radius: 2px;
+  transition: background-color 0.3s;
+}
+
+.contactPage button:hover {
+  background-color: #243957;
+}
+
+.contactPage .sec-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80vh;
+  margin-bottom: 90px;
+}
+
+.contactPage .sec-2 iframe {
+  width: 80%;
+  height: 100%;
+}
+
+@media only screen and (orientation: portrait), (max-width: 500px) {
+  .contactPage .sec-1 {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    width: 100%;
+    margin: 10px 0;
+    padding: 25px;
+  }
+
+  .contactPage .sec-1 .right,
+  .contactPage .sec-2 .left {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .contactPage .sec-1 .right {
+    text-align: center;
+    padding-left: 0px;
+    padding-top: 0px;
+  }
+
+  .contactPage .sec-1 .right h3 {
+    width: 100%;
+    font-weight: bolder;
+  }
+
+  .contactPage .sec-1 .name {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .contactPage .sec-1 .name input {
+    width: 100%;
+  }
+
+  .contactPage .sec-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50vh;
+    margin-bottom: 90px;
+  }
+}

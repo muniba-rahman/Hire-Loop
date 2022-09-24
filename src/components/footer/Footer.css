@@ -1,160 +1,151 @@
-
-
 .footer_container {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: stretch;
-    padding: 5vh 1vw;
-    background: url(../../images/map-world.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-color: #ffff;
-    
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 5vh 1vw;
+  background: url(../../images/map-world.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #fafafa;
 }
 
-a:link{
-    text-decoration: none;
+a:link {
+  text-decoration: none;
 }
 
 .footer_container h1 {
-    font-size: 24px;
+  font-size: 24px;
 }
 
-.contact_info ul{
-    text-align: left;
-    list-style: none;
-    padding:0;
+.contact_info ul {
+  text-align: left;
+  list-style: none;
+  padding: 0;
 }
 
 footer {
-    background-color: #FAFAFA;
-    padding: 15px;
-    font-weight: bold;
-    font-size: small;
+  background-color: #fafafa;
+  padding: 15px;
+  font-weight: bold;
+  font-size: small;
 }
 
 .sub_container {
-    flex:1;
-    display: flex;
-    flex-direction:column;
-    position: relative;
-    font-size: 12px;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-size: 12px;
+  align-items: center;
 }
 
 .sub_container ul {
-    width: 80%;
+  width: 80%;
 }
 
-.sub_container li{
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 10px;
+.sub_container li {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 10px;
 }
 
 .sub_container i {
-    width:40px;
-    padding-right: 5px;
+  width: 40px;
+  padding-right: 5px;
 }
 
-.logo_aic{
-    object-fit: contain;
-    position: relative;
-    width: 50%;
-    justify-self: flex-start;
+.logo_aic {
+  object-fit: contain;
+  position: relative;
+  width: 50%;
+  justify-self: flex-start;
 }
 
 .round_btns_container {
-    display:flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .round_btn {
-    background-color: #44699d;
-    position: relative;
-    border-radius: 50vw;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    height: 30px;
-    width: 30px;
-    margin: 0 10px;
-    transition: 0.3s;
+  background-color: #44699d;
+  position: relative;
+  border-radius: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  margin: 0 10px;
+  transition: 0.3s;
 }
 
 .round_btn:hover {
-    background-color: #0b2242;
+  background-color: #0b2242;
 }
 
 .round_btn i {
-    color: white;
-    position:relative;
-    top:0; 
-    bottom:0;
-    right:0;
-    left:0;
-    text-align: center;
-    padding:0;
+  color: white;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  padding: 0;
 }
 
-.imp_links li{
-  padding-top:5px;
+.imp_links li {
+  padding-top: 5px;
   border-bottom: 1px solid rgb(177, 177, 177);
 }
 
 .imp_links i {
-    color: #44699d;
+  color: #44699d;
 }
 
 .imp_links div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content:center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .imp_links a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
-@media only screen and (orientation: portrait), (max-width: 700px ) {
+@media only screen and (orientation: portrait), (max-width: 700px) {
+  .footer_container {
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .footer_container {
-        flex-direction: column;
-        position: relative;
-        height:100%;
-        align-items: center;
-        justify-content: center;
-    }
+  .logo_aic {
+    width: 40vw;
+    height: 40vw;
+  }
+  .sub_container {
+    width: 90vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+  }
+  .sub_container ul {
+    padding: 10px 10px;
+    text-align: left;
+  }
 
-    .logo_aic {
-        width: 40vw;
-        height:40vw;
-    }
-    .sub_container {
-        width: 90vw;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 10px 0;
-        
-    }
-    .sub_container ul {
-        padding: 10px 10px;
-        text-align: left;
-    }
-
-    .sub_container li {
-        flex-direction: row;
-    }
-
-  
-
+  .sub_container li {
+    flex-direction: row;
+  }
 }
