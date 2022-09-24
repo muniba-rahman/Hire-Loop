@@ -15,7 +15,7 @@ export function GetApiRequestHeader(customHeader = {}) {
 }
 
 const instance = axios.create({
-  baseURL: DEV_URL,
+  baseURL: BASE_URL,
   timeout: 6000,
   headers: GetApiRequestHeader(),
 });
