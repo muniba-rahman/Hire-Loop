@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useSelector } from "react-redux";
-import { DEV_URL } from "../constants/api_constants";
+import { BASE_URL, DEV_URL } from "../constants/api_constants";
 
 export function GetApiRequestHeader(customHeader = {}) {
   return {
