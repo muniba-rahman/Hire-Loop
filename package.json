@@ -1,6 +1,9 @@
 {
   "name": "aic-web-frontend",
   "version": "0.1.1",
+  "engines": {
+    "node": "16.x"
+  },
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
