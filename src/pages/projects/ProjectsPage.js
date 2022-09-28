@@ -73,6 +73,7 @@ function ProjectsPage() {
     <div>
       {/* Banner */}
       <Banner title="Our Projects" />
+      {/* Projects */}
       <div className={"projs-container"}>{ShowProjects}</div>
     </div>
   );
