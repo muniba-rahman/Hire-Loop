@@ -24,6 +24,8 @@ import { validateToken } from "./redux/slices/user.slice";
 import BlogsPage from "./pages/blogs/BlogsPage";
 import OurAchievmentsPage from "./pages/about/OurAchievmentsPage";
 import BlogPage from "./pages/blogs/BlogPage";
+import ProjectsPage from "./pages/projects/ProjectsPage";
+import ProjectPage from "./pages/projects/ProjectPage";
 
 function App() {
   const drawerOpen = useSelector((state) => state.appStates.drawer_open);
@@ -94,6 +96,9 @@ function App() {
           <Route path="/sign-in" element={<SignInPage />} />
           <Route exact path="/contact-us" element={<ContactPage />} />
           <Route path="*" element={<Navigate to="/" />} />
+
+          <Route path="/projects" element={<ProjectsPage/>}></Route>
+          <Route path="/projects/:id" element={<ProjectPage/>}/>
         </Routes>
       </ScrollToTop>
 
